@@ -1,0 +1,14 @@
+/*
+ * Copyright (C) HereweTech, Inc - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
+
+syntax = "proto3";
+
+package svc.api;
+option go_package = "./proto;proto";
+//import "google/protobuf/empty.proto";
+//import "google/protobuf/timestamp.proto";
+
+service Dataset {};
