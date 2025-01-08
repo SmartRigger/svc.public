@@ -8,7 +8,5 @@ syntax = "proto3";
 
 package svc.api;
 option go_package = "./proto;proto";
-// import "google/protobuf/empty.proto";
-// import "google/protobuf/timestamp.proto";
 
-service Dataset {};
+service Staff {};
