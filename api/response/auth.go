@@ -13,7 +13,15 @@
 
 package response
 
-type PostAuthLogin struct{}
+type PostAuthLogin struct {
+	ID       string `json:"id" yaml:"id" xml:"id"`
+	Username string `json:"username" yaml:"username" xml:"username"`
+	Name     string `json:"name" yaml:"name" xml:"name"`
+	Avatar   string `json:"avatar" yaml:"avatar" xml:"avatar"`
+	Status   int    `json:"status" yaml:"status" xml:"status"`
+	Token    string `json:"token" yaml:"token" xml:"token"`
+	Expired  int64  `json:"expired" yaml:"expired" xml:"expired"`
+}
 
 /*
  * Local variables:
