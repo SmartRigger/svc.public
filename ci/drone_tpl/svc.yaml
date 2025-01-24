@@ -1,0 +1,56 @@
+# SmartRigger service drone template.
+
+kind: pipeline
+type: docker
+name: "{{ .imput.service }}@testing"
+steps:
+  - name: build
+    image: golang:alpine
+    commands:
+      - "apk add make git"
+      - "make"
+
+  - name: docker
+    image: plugins/docker:latest
+    settings:
+      username:
+        from_secret: docker_registry_tencent_username
+      password:
+        from_secret: docker_registry_tencent_password
+      repo: {{ .input.docker_repo }}
+      tags: testing
+      registry: ccr.ccs.tencentyun.com
+
+  - name: deploy
+    image: appleboy/drone-ssh:latest
+    settings:
+      host:
+        - dev.sr.herewe.tech
+      username:
+        from_secret: ssh_dev_sr_username
+      password:
+        from_secret: ssh_dev_sr_password
+      port: 22
+      command_timeout: 5m
+      script:
+        - docker pull {{ .input.docker_repo }}:testing
+        - docker system prune --force
+
+  - name: run
+    image: appleboy/drone-ssh:latest
+    settings:
+      host:
+        - dev.sr.herewe.tech
+      username:
+        from_secret: ssh_dev_sr_username
+      password:
+        from_secret: ssh_dev_sr_password
+      port: 22
+      command_timeout: 5m
+      script:
+        - docker stack deploy --with-registry-auth --compose-file /data/shared/smartrigger/env/swarm/compose/smartrigger.yaml smartrigger
+        - docker system prune --force
+
+trigger:
+  branch:
+    - testing

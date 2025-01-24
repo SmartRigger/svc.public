@@ -1,0 +1,16 @@
+[Unit]
+Description=smartrigger_svc.api
+After=network-online.target
+
+[Service]
+Type=single
+WorkingDirectory=/opt/smartrigger/svc.api
+Environment=
+ExecStart=/opt/smartrigger/svc.api/bin/svc
+PIDFile=/run/smartrigger/svc.api.pid
+Restart=always
+User=ci
+Group=ci
+
+[Install]
+WantedBy=multi-user.target
