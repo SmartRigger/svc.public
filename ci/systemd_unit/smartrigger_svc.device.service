@@ -1,0 +1,16 @@
+[Unit]
+Description=smartrigger_svc.device
+After=network-online.target
+
+[Service]
+Type=single
+WorkingDirectory=/opt/smartrigger/svc.device
+Environment=
+ExecStart=/opt/smartrigger/svc.device/bin/svc
+PIDFile=/run/smartrigger/svc.device.pid
+Restart=always
+User=ci
+Group=ci
+
+[Install]
+WantedBy=multi-user.target

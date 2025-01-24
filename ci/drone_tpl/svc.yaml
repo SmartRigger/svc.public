@@ -22,19 +22,17 @@ steps:
       registry: ccr.ccs.tencentyun.com
 
   - name: deploy
-    image: appleboy/drone-ssh:latest
+    image: appleboy/drone-scp:latest
     settings:
-      host:
+      host: 
         - dev.sr.herewe.tech
       username:
         from_secret: ssh_dev_sr_username
       password:
         from_secret: ssh_dev_sr_password
       port: 22
-      command_timeout: 5m
-      script:
-        - docker pull {{ .input.docker_repo }}:testing
-        - docker system prune --force
+      target: /opt/smartrigger/${DRONE_REPO_NAME}
+      source: bin/svc
 
   - name: run
     image: appleboy/drone-ssh:latest
@@ -48,8 +46,7 @@ steps:
       port: 22
       command_timeout: 5m
       script:
-        - docker stack deploy --with-registry-auth --compose-file /data/shared/smartrigger/env/swarm/compose/smartrigger.yaml smartrigger
-        - docker system prune --force
+        - sudo /bin/systemctl restart smartrigger_{{ .input.service }}.service
 
 trigger:
   branch:
