@@ -5,7 +5,7 @@
  */
 
 /**
- * @file auth.go
+ * @file svc.api.http.go
  * @package response
  * @author Dr.NP <conan.np@gmail.com>
  * @since 01/14/2025
@@ -13,7 +13,7 @@
 
 package response
 
-type PostAuthLogin struct {
+type ApiHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
 	Name     string `json:"name" yaml:"name" xml:"name"`

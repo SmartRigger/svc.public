@@ -11,4 +11,15 @@ option go_package = "./proto;proto";
 // import "google/protobuf/empty.proto";
 // import "google/protobuf/timestamp.proto";
 
-service Dataset {};
+service Dataset {
+    rpc AppendMeasure (AppendMeasureReq) returns (AppendMeasureResp);
+};
+
+message AppendMeasureReq {
+    string device_id = 1;
+    double value = 2;
+    string detail = 127;
+};
+message AppendMeasureResp {
+    bool status = 1;
+};

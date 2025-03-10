@@ -5,7 +5,7 @@
  */
 
 /**
- * @file auth.go
+ * @file svc.api.http.go
  * @package request
  * @author Dr.NP <conan.np@gmail.com>
  * @since 01/14/2025
@@ -13,10 +13,13 @@
 
 package request
 
-type PostAuthLogin struct {
+/* {{{ [svc.api/auth] */
+type ApiHTTPPostAuthLogin struct {
 	Username string `json:"username" xml:"username" form:"username"`
 	Password string `json:"password" xml:"password" form:"password"`
 }
+
+/* }}} */
 
 /*
  * Local variables:
