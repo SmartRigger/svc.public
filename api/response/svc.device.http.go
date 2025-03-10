@@ -13,6 +13,10 @@
 
 package response
 
+type DeviceHTTPPostMeasure struct {
+	Status bool `json:"status" xml:"status" form:"status"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
