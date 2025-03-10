@@ -30,6 +30,10 @@ const (
 	MsgAuthenticateFailed  = "Authenticate failed"
 	CodeUnauthorized       = 10401999
 	MsgUnauthorized        = "Unauthorized"
+	CodeNotFound           = 10404001
+	MsgNotFound            = "Not found"
+	CodeConflict           = 10409001
+	MsgConflict            = "Conflict"
 )
 
 /*

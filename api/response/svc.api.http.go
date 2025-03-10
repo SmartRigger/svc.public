@@ -23,6 +23,23 @@ type ApiHTTPPostAuthLogin struct {
 	Expired  int64  `json:"expired" yaml:"expired" xml:"expired"`
 }
 
+type ApiHTTPGetAccountGet struct {
+	ID               string `json:"id" yaml:"id" xml:"id"`
+	GroupID          string `json:"group_id" yaml:"group_id" xml:"group_id"`
+	GroupName        string `json:"group_name" yaml:"group_name" xml:"group_name"`
+	GroupPermissions int64  `json:"group_permissions" yaml:"group_permissions" xml:"group_permissions"`
+	Username         string `json:"username" yaml:"username" xml:"username"`
+	Name             string `json:"name" yaml:"name" xml:"name"`
+	Status           int    `json:"status" yaml:"status" xml:"status"`
+	Avatar           string `json:"avatar" yaml:"avatar" xml:"avatar"`
+}
+
+type ApiHTTPGetGroupGet struct {
+	ID          string `json:"id" yaml:"id" xml:"id"`
+	Name        string `json:"name" yaml:"name" xml:"name"`
+	Permissions int64  `json:"permissions" yaml:"permissions" xml:"permissions"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
