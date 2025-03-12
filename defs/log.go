@@ -5,7 +5,7 @@
  */
 
 /**
- * @file general.go
+ * @file permission.go
  * @package defs
  * @author Dr.NP <conan.np@gmail.com>
  * @since 01/04/2025
@@ -13,9 +13,12 @@
 
 package defs
 
-// Application
+type LogOperation int
+
 const (
-	AppName = "SmartRigger"
+	OpEmpty LogOperation = iota
+	OpLogin
+	OpLogout
 )
 
 /*
