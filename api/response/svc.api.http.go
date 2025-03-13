@@ -116,6 +116,28 @@ type ApiHTTPGetCraft struct {
 	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
+type ApiHTTPGetTemplateGet struct {
+	ID              string `json:"id" yaml:"id" xml:"id"`                                           // Template management ID
+	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`          // Template name
+	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`                         // Craft ID
+	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`                // Compiler ID
+	Version         string `json:"version" yaml:"version" xml:"version"`                            // Template version
+	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`                            // Remarks about the template
+	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"` // Parameter configuration (JSON string)
+	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`                   // Template creation timestamp
+}
+
+type ApiHTTPGetTemplate struct {
+	ID              string `json:"id" yaml:"id" xml:"id"`                                           // Template management ID
+	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`          // Template name
+	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`                         // Craft ID
+	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`                // Compiler ID
+	Version         string `json:"version" yaml:"version" xml:"version"`                            // Template version
+	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`                            // Remarks about the template
+	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"` // Parameter configuration (JSON string)
+	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`                   // Template creation timestamp
+}
+
 /*
  * Local variables:
  * tab-width: 4
