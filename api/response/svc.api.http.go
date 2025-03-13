@@ -90,14 +90,6 @@ type ApiHTTPGetIssue struct {
 	ReturnTime          string `json:"return_time" yaml:"return_time" xml:"return_time"`
 }
 
-type ApiHTTPGetCraftProcess struct {
-	ID          string `json:"id" yaml:"id" xml:"id"`
-	CraftID     string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
-	Description string `json:"description" yaml:"description" xml:"description"`
-	Attachment  string `json:"attachment" yaml:"attachment" xml:"attachment"`
-	CreatedAt   string `json:"created_at" yaml:"created_at" xml:"created_at"`
-}
-
 type ApiHTTPGetCraftGet struct {
 	ID                   string `json:"id" yaml:"id" xml:"id"`
 	CraftNumber          string `json:"craft_number" yaml:"craft_number" xml:"craft_number"`
@@ -117,6 +109,7 @@ type ApiHTTPGetCraft struct {
 	CraftName            string `json:"craft_name" yaml:"craft_name" xml:"craft_name"`
 	MeasurementToolID    string `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
 	ProductionObjectName string `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
+	CraftProcesses       string `bun:"craft_processes" json:"craft_processes" xml:"craft_processes" yaml:"craft_processes"`
 	CompilerID           string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
 	Version              string `json:"version" yaml:"version" xml:"version"`
 	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
