@@ -62,6 +62,37 @@ type ApiHTTPGetGroupedPermission struct {
 	Permissions []ApiHTTPGetPermission `json:"permissions" yaml:"permissions" xml:"permissions"`
 }
 
+/* {{{ [ApiHTTPGetIssueGet] */
+type ApiHTTPGetIssueGet struct {
+	ID                  string `json:"id"`
+	ToolID              string `json:"tool_id"`
+	ToolCustomNumber    string `json:"tool_custom_number"`
+	ToolType            string `json:"tool_type"`
+	ToolName            string `json:"tool_name"`
+	ToolSpecification   string `json:"tool_specification"`
+	ToolMeasurementUnit string `json:"tool_measurement_unit"`
+	StaffId             string `json:"staff_id"`
+	StaffName           string `json:"staff_name"`
+	IssueTime           string `json:"issue_time"`
+	ReturnTime          string `json:"return_time"`
+}
+
+/* }}} */
+/* {{{ [ApiHTTPGetIssue] */
+type ApiHTTPGetIssue struct {
+	ID                  string `json:"id"`
+	ToolID              string `json:"tool_id"`
+	ToolCustomNumber    string `json:"tool_custom_number"`
+	ToolType            string `json:"tool_type"`
+	ToolName            string `json:"tool_name"`
+	ToolSpecification   string `json:"tool_specification"`
+	ToolMeasurementUnit string `json:"tool_measurement_unit"`
+	StaffId             string `json:"staff_id"`
+	StaffName           string `json:"staff_name"`
+	IssueTime           string `json:"issue_time"`
+	ReturnTime          string `json:"return_time"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
