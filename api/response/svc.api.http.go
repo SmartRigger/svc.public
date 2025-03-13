@@ -62,35 +62,65 @@ type ApiHTTPGetGroupedPermission struct {
 	Permissions []ApiHTTPGetPermission `json:"permissions" yaml:"permissions" xml:"permissions"`
 }
 
-/* {{{ [ApiHTTPGetIssueGet] */
 type ApiHTTPGetIssueGet struct {
-	ID                  string `json:"id"`
-	ToolID              string `json:"tool_id"`
-	ToolCustomNumber    string `json:"tool_custom_number"`
-	ToolType            string `json:"tool_type"`
-	ToolName            string `json:"tool_name"`
-	ToolSpecification   string `json:"tool_specification"`
-	ToolMeasurementUnit string `json:"tool_measurement_unit"`
-	StaffId             string `json:"staff_id"`
-	StaffName           string `json:"staff_name"`
-	IssueTime           string `json:"issue_time"`
-	ReturnTime          string `json:"return_time"`
+	ID                  string `json:"id" yaml:"id" xml:"id"`
+	ToolID              string `json:"tool_id" yaml:"tool_id" xml:"tool_id"`
+	ToolCustomNumber    string `json:"tool_custom_number" yaml:"tool_custom_number" xml:"tool_custom_number"`
+	ToolType            string `json:"tool_type" yaml:"tool_type" xml:"tool_type"`
+	ToolName            string `json:"tool_name" yaml:"tool_name" xml:"tool_name"`
+	ToolSpecification   string `json:"tool_specification" yaml:"tool_specification" xml:"tool_specification"`
+	ToolMeasurementUnit string `json:"tool_measurement_unit" yaml:"tool_measurement_unit" xml:"tool_measurement_unit"`
+	StaffId             string `json:"staff_id" yaml:"staff_id" xml:"staff_id"`
+	StaffName           string `json:"staff_name" yaml:"staff_name" xml:"staff_name"`
+	IssueTime           string `json:"issue_time" yaml:"issue_time" xml:"issue_time"`
+	ReturnTime          string `json:"return_time" yaml:"return_time" xml:"return_time"`
 }
 
-/* }}} */
-/* {{{ [ApiHTTPGetIssue] */
 type ApiHTTPGetIssue struct {
-	ID                  string `json:"id"`
-	ToolID              string `json:"tool_id"`
-	ToolCustomNumber    string `json:"tool_custom_number"`
-	ToolType            string `json:"tool_type"`
-	ToolName            string `json:"tool_name"`
-	ToolSpecification   string `json:"tool_specification"`
-	ToolMeasurementUnit string `json:"tool_measurement_unit"`
-	StaffId             string `json:"staff_id"`
-	StaffName           string `json:"staff_name"`
-	IssueTime           string `json:"issue_time"`
-	ReturnTime          string `json:"return_time"`
+	ID                  string `json:"id" yaml:"id" xml:"id"`
+	ToolID              string `json:"tool_id" yaml:"tool_id" xml:"tool_id"`
+	ToolCustomNumber    string `json:"tool_custom_number" yaml:"tool_custom_number" xml:"tool_custom_number"`
+	ToolType            string `json:"tool_type" yaml:"tool_type" xml:"tool_type"`
+	ToolName            string `json:"tool_name" yaml:"tool_name" xml:"tool_name"`
+	ToolSpecification   string `json:"tool_specification" yaml:"tool_specification" xml:"tool_specification"`
+	ToolMeasurementUnit string `json:"tool_measurement_unit" yaml:"tool_measurement_unit" xml:"tool_measurement_unit"`
+	StaffId             string `json:"staff_id" yaml:"staff_id" xml:"staff_id"`
+	StaffName           string `json:"staff_name" yaml:"staff_name" xml:"staff_name"`
+	IssueTime           string `json:"issue_time" yaml:"issue_time" xml:"issue_time"`
+	ReturnTime          string `json:"return_time" yaml:"return_time" xml:"return_time"`
+}
+
+type ApiHTTPGetCraftProcess struct {
+	ID          string `json:"id" yaml:"id" xml:"id"`
+	CraftID     string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
+	Description string `json:"description" yaml:"description" xml:"description"`
+	Attachment  string `json:"attachment" yaml:"attachment" xml:"attachment"`
+	CreatedAt   string `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetCraftGet struct {
+	ID                   string `json:"id" yaml:"id" xml:"id"`
+	CraftNumber          string `json:"craft_number" yaml:"craft_number" xml:"craft_number"`
+	CraftName            string `json:"craft_name" yaml:"craft_name" xml:"craft_name"`
+	MeasurementToolID    string `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
+	ProductionObjectName string `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
+	CompilerID           string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	Version              string `json:"version" yaml:"version" xml:"version"`
+	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
+	CraftProcesses       string `json:"craft_processes" yaml:"craft_processes" xml:"craft_processes"`
+	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetCraft struct {
+	ID                   string `json:"id" yaml:"id" xml:"id"`
+	CraftNumber          string `json:"craft_number" yaml:"craft_number" xml:"craft_number"`
+	CraftName            string `json:"craft_name" yaml:"craft_name" xml:"craft_name"`
+	MeasurementToolID    string `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
+	ProductionObjectName string `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
+	CompilerID           string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	Version              string `json:"version" yaml:"version" xml:"version"`
+	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
+	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
 /*
