@@ -117,25 +117,48 @@ type ApiHTTPGetCraft struct {
 }
 
 type ApiHTTPGetTemplateGet struct {
-	ID              string `json:"id" yaml:"id" xml:"id"`                                           // Template management ID
-	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`          // Template name
-	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`                         // Craft ID
-	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`                // Compiler ID
-	Version         string `json:"version" yaml:"version" xml:"version"`                            // Template version
-	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`                            // Remarks about the template
-	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"` // Parameter configuration (JSON string)
-	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`                   // Template creation timestamp
+	ID              string `json:"id" yaml:"id" xml:"id"`
+	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
+	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	Version         string `json:"version" yaml:"version" xml:"version"`
+	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`
+	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"`
+	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
 type ApiHTTPGetTemplate struct {
-	ID              string `json:"id" yaml:"id" xml:"id"`                                           // Template management ID
-	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`          // Template name
-	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`                         // Craft ID
-	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`                // Compiler ID
-	Version         string `json:"version" yaml:"version" xml:"version"`                            // Template version
-	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`                            // Remarks about the template
-	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"` // Parameter configuration (JSON string)
-	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`                   // Template creation timestamp
+	ID              string `json:"id" yaml:"id" xml:"id"`
+	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
+	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	Version         string `json:"version" yaml:"version" xml:"version"`
+	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`
+	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"`
+	CreatedAt       string `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetMeasurementGet struct {
+	ID               string `json:"id" yaml:"id" xml:"id"`
+	TemplateID       string `json:"template_id" yaml:"template_id" xml:"template_id"`
+	TemplateName     string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	WorkgroupNumber  string `json:"workgroup_number" yaml:"workgroup_number" xml:"workgroup_number"`
+	MeasurementCount int16  `json:"measurement_count" yaml:"measurement_count" xml:"measurement_count"`
+	CreatorID        string `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
+	CreatorName      string `json:"creator_name" yaml:"creator_name" xml:"creator_name"`
+	CreatedAt        string `json:"created_at" yaml:"created_at" xml:"created_at"`
+	Number           string `json:"number" yaml:"number" xml:"number"`
+}
+
+type ApiHTTPGetMeasurement struct {
+	SerialNumber     int64  `json:"serial_number" yaml:"serial_number" xml:"serial_number"`
+	ID               string `json:"id" yaml:"id" xml:"id"`
+	TemplateName     string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	Number           string `json:"number" yaml:"number" xml:"number"`
+	WorkgroupNumber  string `json:"workgroup_number" yaml:"workgroup_number" xml:"workgroup_number"`
+	MeasurementCount int16  `json:"measurement_count" yaml:"measurement_count" xml:"measurement_count"`
+	CreatorName      string `json:"creator_name" yaml:"creator_name" xml:"creator_name"`
+	CreatedAt        string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
 /*
