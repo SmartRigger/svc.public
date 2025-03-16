@@ -41,7 +41,6 @@ type ApiHTTPPostEditCraft struct {
 	CraftName            string `json:"craft_name"`
 	MeasurementToolID    string `json:"measurement_tool_id"`
 	ProductionObjectName string `json:"production_object_name"`
-	CompilerID           string `json:"compiler_id"`
 	Version              string `json:"version"`
 	Remarks              string `json:"remarks"`
 }
@@ -51,7 +50,6 @@ type ApiHTTPPostCreateCraft struct {
 	CraftName            string `json:"craft_name"`
 	MeasurementToolID    string `json:"measurement_tool_id"`
 	ProductionObjectName string `json:"production_object_name"`
-	CompilerID           string `json:"compiler_id"`
 	Version              string `json:"version"`
 	Remarks              string `json:"remarks"`
 	CraftProcesses       string `json:"craft_processes"`
@@ -71,12 +69,11 @@ type ApiHTTPPostCreateGroup struct {
 }
 
 type ApiHTTPPostReturnToolRequest struct {
-	IssueID string `json:"issue_id" example:"550e8400-e29b-41d4-a716-446655440000"`
+	IssueID string `json:"issue_id"`
 }
 
 type ApiHTTPPostIssueToolRequest struct {
-	ToolID    string `json:"tool_id" example:"550e8400-e29b-41d4-a716-446655440000"`
-	StaffID   string `json:"staff_id" example:"550e8400-e29b-41d4-a716-446655440000"`
+	ToolID    string `json:"tool_id"`
 	StaffName string `json:"staff_name" example:"John Doe"`
 }
 
@@ -85,21 +82,18 @@ type ApiHTTPPutMeasurementRequest struct {
 	TemplateID       string `json:"template_id"`
 	WorkgroupNumber  string `json:"workgroup_number"`
 	MeasurementCount int    `json:"measurement_count"`
-	CreatorID        string `json:"creator_id"`
 }
 
 type ApiHTTPPostMeasurementRequest struct {
 	TemplateID       string `json:"template_id"`
 	WorkgroupNumber  string `json:"workgroup_number"`
 	MeasurementCount int    `json:"measurement_count"`
-	CreatorID        string `json:"creator_id"`
 }
 
 type ApiHTTPPostTemplateRequest struct {
 	ID              string `json:"id"`
 	TemplateName    string `json:"template_name"`
 	CraftID         string `json:"craft_id"`
-	CompilerID      string `json:"compiler_id"`
 	Version         string `json:"version"`
 	Remarks         string `json:"remarks"`
 	ParameterConfig string `json:"parameter_config"`
