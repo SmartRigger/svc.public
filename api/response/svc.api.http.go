@@ -98,6 +98,7 @@ type ApiHTTPGetCraftGet struct {
 	MeasurementToolID    string `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
 	ProductionObjectName string `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
 	CompilerID           string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	CompilerName         string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version              string `json:"version" yaml:"version" xml:"version"`
 	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	CraftProcesses       string `json:"craft_processes" yaml:"craft_processes" xml:"craft_processes"`
@@ -112,6 +113,7 @@ type ApiHTTPGetCraft struct {
 	ProductionObjectName string `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
 	CraftProcesses       string `bun:"craft_processes" json:"craft_processes" xml:"craft_processes" yaml:"craft_processes"`
 	CompilerID           string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	CompilerName         string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version              string `json:"version" yaml:"version" xml:"version"`
 	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
@@ -122,6 +124,7 @@ type ApiHTTPGetTemplateGet struct {
 	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
 	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
 	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	CompilerName    string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version         string `json:"version" yaml:"version" xml:"version"`
 	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"`
@@ -133,6 +136,7 @@ type ApiHTTPGetTemplate struct {
 	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
 	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
 	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
+	CompilerName    string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version         string `json:"version" yaml:"version" xml:"version"`
 	Remarks         string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	ParameterConfig string `json:"parameter_config" yaml:"parameter_config" xml:"parameter_config"`
