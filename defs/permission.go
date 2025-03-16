@@ -33,6 +33,7 @@ const (
 	PermissionStaffLogin          = 1 << 15 // 人员登录
 	PermissionDataBackup          = 1 << 16 // 数据备份
 	PermissionDataRestore         = 1 << 17 // 数据恢复
+	PermissionPassWord            = 1 << 18 // 密码修改
 )
 
 // Pre-defined permission group
@@ -54,7 +55,8 @@ var (
 		PermissionStaffStation |
 		PermissionStaffLogin |
 		PermissionDataBackup |
-		PermissionDataRestore
+		PermissionDataRestore |
+		PermissionPassWord
 	PermissionsDirector = PermissionValid |
 		PermissionDeviceInventory |
 		PermissionDeviceIssue |

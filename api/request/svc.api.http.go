@@ -20,17 +20,19 @@ type ApiHTTPPostAuthLogin struct {
 }
 
 type ApiHTTPPostEditAccount struct {
-	ID       string `json:"id" xml:"id" form:"id"`
-	Username string `json:"user_name" xml:"user_name" form:"user_name"`
-	GroupID  string `json:"group_id" xml:"group_id" form:"group_id"`
-	Status   *int   `json:"status" xml:"status" form:"status"`
+	ID        string `json:"id" xml:"id" form:"id"`
+	Username  string `json:"user_name" xml:"user_name" form:"user_name"`
+	GroupID   string `json:"group_id" xml:"group_id" form:"group_id"`
+	Status    *int   `json:"status" xml:"status" form:"status"`
+	DisplayID string `json:"display_id"`
 }
 
 type ApiHTTPPostCreateAccount struct {
-	UserName string `json:"user_name" binding:"required"`
-	GroupID  string `json:"group_id" binding:"required"`
-	Status   int    `json:"status"`
-	RealName string `json:"real_name"`
+	UserName  string `json:"user_name" binding:"required"`
+	GroupID   string `json:"group_id" binding:"required"`
+	Status    int    `json:"status"`
+	RealName  string `json:"real_name"`
+	DisplayID string `json:"display_id"`
 }
 
 type ApiHTTPPostEditCraft struct {
