@@ -17,7 +17,7 @@ service Dataset {
 
 message AppendMeasureReq {
     string device_id = 1;
-    double value = 2;
+    string value = 2;
     string detail = 127;
 };
 message AppendMeasureResp {
