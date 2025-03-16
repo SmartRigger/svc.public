@@ -17,6 +17,7 @@ type ApiHTTPGetTool struct {
 	ID                       string `json:"id" yaml:"id" xml:"id"`
 	Name                     string `json:"name" yaml:"name" xml:"name"`
 	Category                 string `json:"category" yaml:"category" xml:"category"`
+	Range                    string `json:"range" yaml:"range" xml:"range"`
 	InspectionDate           string `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
 	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
 	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`

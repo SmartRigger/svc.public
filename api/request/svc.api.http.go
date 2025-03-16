@@ -30,6 +30,7 @@ type ApiHTTPPostCreateAccount struct {
 	UserName string `json:"user_name" binding:"required"`
 	GroupID  string `json:"group_id" binding:"required"`
 	Status   int    `json:"status"`
+	RealName string `json:"real_name"`
 }
 
 type ApiHTTPPostEditCraft struct {
@@ -112,6 +113,7 @@ type ApiHTTPPutToolRequest struct {
 	DailyStartupVerification bool   `json:"daily_startup_verification"`
 	SelfMutualInspection     bool   `json:"self_mutual_inspection"`
 	MeasurementUnit          string `json:"measurement_unit"`
+	ExpireDate               string `json:"expire_date"`
 }
 
 type ApiHTTPPostToolRequest struct {
@@ -124,6 +126,18 @@ type ApiHTTPPostToolRequest struct {
 	SelfMutualInspection     string `json:"self_mutual_inspection"`
 	MeasurementUnit          string `json:"measurement_unit"`
 	RegistrationDate         string `json:"registration_date"`
+	ExpireDate               string `json:"expire_date"`
+}
+
+type ApiHTTPPostChangePassword struct {
+	OldPassword string `json:"old_password"`
+	NewPassword string `json:"new_password"`
+}
+
+type ApiHTTPPostChangePasswordByID struct {
+	ID          string `json:"id"`
+	OldPassword string `json:"old_password"`
+	NewPassword string `json:"new_password"`
 }
 
 /*
