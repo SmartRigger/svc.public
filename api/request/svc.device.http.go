@@ -14,9 +14,9 @@
 package request
 
 type DeviceHTTPPostMeasure struct {
-	DeviceID string  `json:"device_id" xml:"device_id" form:"device_id"`
-	Value    float64 `json:"value" xml:"value" form:"value"`
-	Detail   string  `json:"detail,omitempty" xml:"detail,omitempty" form:"detail,omitempty"`
+	DeviceID string `json:"device_id" xml:"device_id" form:"device_id"`
+	Value    string `json:"value" xml:"value" form:"value"`
+	Detail   string `json:"detail,omitempty" xml:"detail,omitempty" form:"detail,omitempty"`
 }
 
 /*

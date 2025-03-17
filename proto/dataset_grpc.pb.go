@@ -16,6 +16,7 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -24,7 +25,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Dataset_AppendMeasure_FullMethodName = "/svc.api.Dataset/AppendMeasure"
+	Dataset_AppendMeasure_FullMethodName   = "/svc.api.Dataset/AppendMeasure"
+	Dataset_ListInstruments_FullMethodName = "/svc.api.Dataset/ListInstruments"
 )
 
 // DatasetClient is the client API for Dataset service.
@@ -32,6 +34,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DatasetClient interface {
 	AppendMeasure(ctx context.Context, in *AppendMeasureReq, opts ...grpc.CallOption) (*AppendMeasureResp, error)
+	ListInstruments(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ListInstrumentsResp, error)
 }
 
 type datasetClient struct {
@@ -52,11 +55,22 @@ func (c *datasetClient) AppendMeasure(ctx context.Context, in *AppendMeasureReq,
 	return out, nil
 }
 
+func (c *datasetClient) ListInstruments(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ListInstrumentsResp, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListInstrumentsResp)
+	err := c.cc.Invoke(ctx, Dataset_ListInstruments_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatasetServer is the server API for Dataset service.
 // All implementations must embed UnimplementedDatasetServer
 // for forward compatibility.
 type DatasetServer interface {
 	AppendMeasure(context.Context, *AppendMeasureReq) (*AppendMeasureResp, error)
+	ListInstruments(context.Context, *emptypb.Empty) (*ListInstrumentsResp, error)
 	mustEmbedUnimplementedDatasetServer()
 }
 
@@ -69,6 +83,9 @@ type UnimplementedDatasetServer struct{}
 
 func (UnimplementedDatasetServer) AppendMeasure(context.Context, *AppendMeasureReq) (*AppendMeasureResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AppendMeasure not implemented")
+}
+func (UnimplementedDatasetServer) ListInstruments(context.Context, *emptypb.Empty) (*ListInstrumentsResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListInstruments not implemented")
 }
 func (UnimplementedDatasetServer) mustEmbedUnimplementedDatasetServer() {}
 func (UnimplementedDatasetServer) testEmbeddedByValue()                 {}
@@ -109,6 +126,24 @@ func _Dataset_AppendMeasure_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Dataset_ListInstruments_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(emptypb.Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatasetServer).ListInstruments(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Dataset_ListInstruments_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatasetServer).ListInstruments(ctx, req.(*emptypb.Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Dataset_ServiceDesc is the grpc.ServiceDesc for Dataset service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -119,6 +154,10 @@ var Dataset_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AppendMeasure",
 			Handler:    _Dataset_AppendMeasure_Handler,
+		},
+		{
+			MethodName: "ListInstruments",
+			Handler:    _Dataset_ListInstruments_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

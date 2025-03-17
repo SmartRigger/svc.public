@@ -8,18 +8,31 @@ syntax = "proto3";
 
 package svc.api;
 option go_package = "./proto;proto";
-// import "google/protobuf/empty.proto";
-// import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
 service Dataset {
-    rpc AppendMeasure (AppendMeasureReq) returns (AppendMeasureResp);
+  rpc AppendMeasure(AppendMeasureReq) returns (AppendMeasureResp);
+  rpc ListInstruments(google.protobuf.Empty) returns (ListInstrumentsResp);
 };
 
+/* {{{ [Measuring instrument] */
+message MeasuringInstrument {
+  string id = 1;
+  string name = 2;
+  string ident = 3;
+  string category = 4;
+  google.protobuf.Timestamp created_at = 127;
+};
+
+/* }}} */
+
 message AppendMeasureReq {
-    string device_id = 1;
-    string value = 2;
-    string detail = 127;
+  string device_id = 1;
+  string value = 2;
+  string detail = 127;
 };
-message AppendMeasureResp {
-    bool status = 1;
-};
+message AppendMeasureResp { bool status = 1; };
+
+message ListInstrumentsReq {};
+message ListInstrumentsResp { repeated MeasuringInstrument list = 1; };
