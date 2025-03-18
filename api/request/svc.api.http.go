@@ -53,6 +53,7 @@ type ApiHTTPPostCreateCraft struct {
 	Version              string `json:"version"`
 	Remarks              string `json:"remarks"`
 	CraftProcesses       string `json:"craft_processes"`
+	Params               string `json:"params"`
 }
 
 type ApiHTTPPostEditGroup struct {
@@ -110,6 +111,7 @@ type ApiHTTPPutToolRequest struct {
 	SelfMutualInspection     bool   `json:"self_mutual_inspection"`
 	MeasurementUnit          string `json:"measurement_unit"`
 	ExpireDate               string `json:"expire_date"`
+	Detail                   string `json:"detail"`
 }
 
 type ApiHTTPPostToolRequest struct {
@@ -123,6 +125,7 @@ type ApiHTTPPostToolRequest struct {
 	MeasurementUnit          string `json:"measurement_unit"`
 	RegistrationDate         string `json:"registration_date"`
 	ExpireDate               string `json:"expire_date"`
+	Detail                   string `json:"detail"`
 }
 
 type ApiHTTPPostChangePassword struct {

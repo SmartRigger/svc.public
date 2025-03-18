@@ -103,6 +103,7 @@ type ApiHTTPGetCraftGet struct {
 	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	CraftProcesses       string `json:"craft_processes" yaml:"craft_processes" xml:"craft_processes"`
 	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
+	Params               string `json:"params" yaml:"params" xml:"params"`
 }
 
 type ApiHTTPGetCraft struct {
@@ -117,6 +118,7 @@ type ApiHTTPGetCraft struct {
 	Version              string `json:"version" yaml:"version" xml:"version"`
 	Remarks              string `json:"remarks" yaml:"remarks" xml:"remarks"`
 	CreatedAt            string `json:"created_at" yaml:"created_at" xml:"created_at"`
+	Params               string `json:"params" yaml:"params" xml:"params"`
 }
 
 type ApiHTTPGetTemplateGet struct {
