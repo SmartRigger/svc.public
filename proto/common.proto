@@ -27,6 +27,7 @@ message Tool {
   bool daily_startup_verification = 9;
   bool self_mutual_inspection = 10;
   string inspection_personnel = 11;
+  string detail = 12;
 };
 /* }}} */
 
