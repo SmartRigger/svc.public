@@ -1,0 +1,41 @@
+/*
+ * Copyright (C) HereweTech, Inc - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
+
+syntax = "proto3";
+
+package svc.api;
+option go_package = "./proto;proto";
+import "google/protobuf/timestamp.proto";
+
+service Common {
+  rpc GetAllTools(GetAllToolsReq) returns (GetAllToolsResp);
+};
+
+/* {{{ [Tool Information] */
+message Tool {
+  string id = 1;
+  string name = 2;
+  string category = 3;
+  google.protobuf.Timestamp inspection_date = 4;
+  string measurement_unit = 5;
+  string range = 6;
+  google.protobuf.Timestamp registration_date = 7;
+  google.protobuf.Timestamp created_at = 8;
+  bool daily_startup_verification = 9;
+  bool self_mutual_inspection = 10;
+  string inspection_personnel = 11;
+};
+/* }}} */
+
+message GetAllToolsReq {
+  string category = 1;
+};
+
+message GetAllToolsResp {
+  bool status = 1;
+  string message = 2;
+  repeated Tool tools = 3;
+};
