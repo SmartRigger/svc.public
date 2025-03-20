@@ -43,6 +43,8 @@ type ApiHTTPPostEditCraft struct {
 	ProductionObjectName string `json:"production_object_name"`
 	Version              string `json:"version"`
 	Remarks              string `json:"remarks"`
+	CraftProcesses       string `json:"craft_processes"`
+	Params               string `json:"params"`
 }
 
 type ApiHTTPPostCreateCraft struct {
