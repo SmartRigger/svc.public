@@ -1,0 +1,39 @@
+# Smartrigger frontend drone template
+
+kind: pipeline
+type: docker
+name: "{{ .input.service }}@testing"
+steps:
+  - name: build
+    image: node:alpine
+    commands:
+      - "npm install"
+      - "npm run build"
+
+  - name: docker
+    image: plugins/docker:latest
+    settings:
+      username:
+        from_secret: docker_registry_tencent_username
+      password:
+        from_secret: docker_registry_tencent_password
+      repo: {{ .input.docker_repo }}
+      tags: testing
+      registry: ccr.ccs.tencentyun.com
+
+  - name: deploy
+    image: appleboy/drone-scp:latest
+    settings:
+      host:
+        - dev.sr.herewe.tech
+      username:
+        from_secret: ssh_dev_sr_username
+      password:
+        from_secret: ssh_dev_sr_password
+      port: 22
+      target: /opt/smartrigger/${DRONE_REPO_NAME}
+      source: dist/*
+
+trigger:
+  branch:
+    - testing
