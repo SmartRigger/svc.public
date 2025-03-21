@@ -19,6 +19,32 @@ const (
 	OpEmpty LogOperation = iota
 	OpLogin
 	OpLogout
+	OpAccountCreate
+	OpAccountEdit
+	OpAccountDelete
+	OpPasswordChange
+	OpPasswordChangeByAdmin
+	OpToolCreate
+	OpToolEdit
+	OpToolDelete
+	OpCraftCreate
+	OpCraftEdit
+	OpCraftDelete
+	OpMeasurementCreate
+	OpMeasurementEdit
+	OpMeasurementDelete
+	OpTemplateCreate
+	OpTemplateEdit
+	OpTemplateDelete
+	OpIssueCreate
+	OpIssueEdit
+	OpIssueDelete
+	OpCommonCreate
+	OpCommonEdit
+	OpCommonDelete
+	OpGroupCreate
+	OpGroupEdit
+	OpGroupDelete
 )
 
 /*
