@@ -12,6 +12,7 @@ type ApiHTTPGetToolGet struct {
 	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
 	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
 	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
+	ExpireDate               string `json:"expired_date" yaml:"expired_date" xml:"expired_date"`
 }
 
 type ApiHTTPGetTool struct {
