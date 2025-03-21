@@ -169,6 +169,17 @@ type ApiHTTPGetMeasurement struct {
 	CreatedAt        string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
+type ApiHTTPGetLog struct {
+	ID        string `json:"id"`
+	SessionID string `json:"session_id"`
+	Account   string `json:"account"`
+	Operation int    `json:"operation"`
+	Success   bool   `json:"success"`
+	Error     string `json:"error,omitempty"`
+	Detail    string `json:"detail"`
+	CreatedAt string `json:"created_at"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
