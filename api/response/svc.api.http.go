@@ -170,14 +170,16 @@ type ApiHTTPGetMeasurement struct {
 }
 
 type ApiHTTPGetLog struct {
-	ID        string `json:"id"`
-	SessionID string `json:"session_id"`
-	Account   string `json:"account"`
-	Operation int    `json:"operation"`
-	Success   bool   `json:"success"`
-	Error     string `json:"error,omitempty"`
-	Detail    string `json:"detail"`
-	CreatedAt string `json:"created_at"`
+	SerialNumber int64  `json:"serial_number"`
+	ID           string `json:"id"`
+	SessionID    string `json:"session_id"`
+	Account      string `json:"account"`
+	AccountName  string `json:"account_name"`
+	Operation    int    `json:"operation"`
+	Success      bool   `json:"success"`
+	Error        string `json:"error,omitempty"`
+	Detail       string `json:"detail"`
+	CreatedAt    string `json:"created_at"`
 }
 
 /*
