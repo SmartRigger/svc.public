@@ -39,9 +39,6 @@ const (
 	OpIssueCreate
 	OpIssueEdit
 	OpIssueDelete
-	OpCommonCreate
-	OpCommonEdit
-	OpCommonDelete
 	OpGroupCreate
 	OpGroupEdit
 	OpGroupDelete
