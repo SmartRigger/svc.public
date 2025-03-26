@@ -27,6 +27,7 @@ type ApiHTTPGetAccountGet struct {
 	ID               string `json:"id" yaml:"id" xml:"id"`
 	GroupID          string `json:"group_id" yaml:"group_id" xml:"group_id"`
 	GroupName        string `json:"group_name" yaml:"group_name" xml:"group_name"`
+	Realname         string `json:"realname" yaml:"realname" xml:"realname"`
 	GroupPermissions int64  `json:"group_permissions" yaml:"group_permissions" xml:"group_permissions"`
 	Username         string `json:"username" yaml:"username" xml:"username"`
 	Name             string `json:"name" yaml:"name" xml:"name"`
