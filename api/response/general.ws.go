@@ -23,7 +23,16 @@ type WSBindToken struct {
 		Token     string `json:"token"`
 		AccountID string `json:"account"`
 		Username  string `json:"username"`
-	}
+	} `json:"data"`
+}
+
+type WSMeasure struct {
+	Type string `json:"type"`
+	Data struct {
+		DeviceID string `json:"device_id"`
+		Value    string `json:"value"`
+		Detail   string `json:"detail"`
+	} `json:"data"`
 }
 
 /*
