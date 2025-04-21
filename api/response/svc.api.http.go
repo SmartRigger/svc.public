@@ -183,6 +183,19 @@ type ApiHTTPGetLog struct {
 	CreatedAt    string `json:"created_at"`
 }
 
+type ApiHTTPGetToolCategory struct {
+	Category string `json:"category"`
+	Count    int64  `json:"count"`
+}
+
+type ApiHTTPGetToolUsage struct {
+	ID         string `json:"id"`
+	Name       string `json:"name"`
+	Category   string `json:"category"`
+	ImageURL   string `json:"image_url"`
+	UsageCount int64  `json:"usage_count"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
