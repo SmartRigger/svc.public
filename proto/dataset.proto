@@ -32,7 +32,10 @@ message AppendMeasureReq {
   string value = 2;
   string detail = 127;
 };
-message AppendMeasureResp { bool status = 1; };
+message AppendMeasureResp { 
+  bool status = 1; 
+  string message = 2;
+};
 
 message ListInstrumentsReq {};
 message ListInstrumentsResp { repeated MeasuringInstrument list = 1; };

@@ -196,6 +196,39 @@ type ApiHTTPGetToolUsage struct {
 	UsageCount int64  `json:"usage_count"`
 }
 
+type ApiHTTPGetDetectionTaskGet struct {
+	ID           string `json:"id"`
+	TemplateID   string `json:"template_id"`
+	TemplateName string `json:"template_name"`
+	CreatorID    string `json:"creator_id"`
+	CreatorName  string `json:"creator_name"`
+	OperatorID   string `json:"operator_id"`
+	OperatorName string `json:"operator_name"`
+	TaskDetail   string `json:"task_detail"`
+	GroupCode    string `json:"group_code"`
+	ItemCount    int32  `json:"item_count"`
+	IsComplete   bool   `json:"is_complete"`
+	CompleteTime string `json:"complete_time"`
+	CreatedAt    string `json:"created_at"`
+	UpdatedAt    string `json:"updated_at"`
+}
+
+type ApiHTTPGetDetectionTask struct {
+	ID           string `json:"id"`
+	TemplateID   string `json:"template_id"`
+	TemplateName string `json:"template_name"`
+	CreatorID    string `json:"creator_id"`
+	CreatorName  string `json:"creator_name"`
+	OperatorID   string `json:"operator_id"`
+	OperatorName string `json:"operator_name"`
+	TaskDetail   string `json:"task_detail"`
+	GroupCode    string `json:"group_code"`
+	ItemCount    int32  `json:"item_count"`
+	IsComplete   bool   `json:"is_complete"`
+	CompleteTime string `json:"complete_time"`
+	CreatedAt    string `json:"created_at"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
