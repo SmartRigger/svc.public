@@ -214,19 +214,22 @@ type ApiHTTPGetDetectionTaskGet struct {
 }
 
 type ApiHTTPGetDetectionTask struct {
-	ID           string `json:"id"`
-	TemplateID   string `json:"template_id"`
-	TemplateName string `json:"template_name"`
-	CreatorID    string `json:"creator_id"`
-	CreatorName  string `json:"creator_name"`
-	OperatorID   string `json:"operator_id"`
-	OperatorName string `json:"operator_name"`
-	TaskDetail   string `json:"task_detail"`
-	GroupCode    string `json:"group_code"`
-	ItemCount    int32  `json:"item_count"`
-	IsComplete   bool   `json:"is_complete"`
-	CompleteTime string `json:"complete_time"`
-	CreatedAt    string `json:"created_at"`
+	ID           string      `json:"id"`
+	TemplateID   string      `json:"template_id"`
+	TemplateName string      `json:"template_name"`
+	Template     interface{} `json:"template"`
+	CreatorID    string      `json:"creator_id"`
+	CreatorName  string      `json:"creator_name"`
+	Creator      interface{} `json:"creator"`
+	OperatorID   string      `json:"operator_id"`
+	OperatorName string      `json:"operator_name"`
+	Operator     interface{} `json:"operator"`
+	TaskDetail   string      `json:"task_detail"`
+	GroupCode    string      `json:"group_code"`
+	ItemCount    int32       `json:"item_count"`
+	IsComplete   bool        `json:"is_complete"`
+	CompleteTime string      `json:"complete_time"`
+	CreatedAt    string      `json:"created_at"`
 }
 
 /*
