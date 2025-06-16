@@ -146,6 +146,8 @@ type ApiHTTPPostCreateDetectionTask struct {
 	CreatorID  string `json:"creator_id" binding:"required"`
 	OperatorID string `json:"operator_id"`
 	TaskDetail string `json:"task_detail"`
+	ReMatch    string `json:"re_match"`
+	TaskType   string `json:"task_type"`
 	GroupCode  string `json:"group_code" binding:"required"`
 	ItemCount  int32  `json:"item_count"`
 	IsComplete bool   `json:"is_complete"`
@@ -156,6 +158,8 @@ type ApiHTTPPostEditDetectionTask struct {
 	TemplateID string `json:"template_id"`
 	OperatorID string `json:"operator_id"`
 	TaskDetail string `json:"task_detail"`
+	ReMatch    string `json:"re_match"`
+	TaskType   string `json:"task_type"`
 	GroupCode  string `json:"group_code"`
 	ItemCount  *int32 `json:"item_count"`
 	IsComplete *bool  `json:"is_complete"`
