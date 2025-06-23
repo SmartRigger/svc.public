@@ -165,6 +165,18 @@ type ApiHTTPPostEditDetectionTask struct {
 	IsComplete *bool  `json:"is_complete"`
 }
 
+type ApiHTTPPostIOTServe struct {
+	Type string `json:"type"`
+	Data struct {
+		OrderNo    string   `json:"orderNo"`
+		SrcCode    string   `json:"srcCode"`
+		ModelName  string   `json:"modelName"`
+		VehicleNo  string   `json:"vehicleNo"`
+		TerminalNo []string `json:"terminalNo"`
+		ProcessNo  string   `json:"processNo"`
+	} `json:"data"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
