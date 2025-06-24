@@ -163,6 +163,7 @@ type ApiHTTPPostEditDetectionTask struct {
 	GroupCode  string `json:"group_code"`
 	ItemCount  *int32 `json:"item_count"`
 	IsComplete *bool  `json:"is_complete"`
+	ReportData string `json:"reportData"`
 }
 
 type ApiHTTPPostIOTServe struct {
