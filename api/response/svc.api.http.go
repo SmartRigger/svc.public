@@ -216,6 +216,7 @@ type ApiHTTPGetDetectionTaskGet struct {
 	CompleteTime string      `json:"complete_time"`
 	CreatedAt    string      `json:"created_at"`
 	UpdatedAt    string      `json:"updated_at"`
+	Addition     string      `json:"addition"`
 }
 
 type ApiHTTPGetDetectionTask struct {
@@ -237,6 +238,7 @@ type ApiHTTPGetDetectionTask struct {
 	IsComplete   bool        `json:"is_complete"`
 	CompleteTime string      `json:"complete_time"`
 	CreatedAt    string      `json:"created_at"`
+	Addition     string      `json:"addition"`
 }
 
 /*
