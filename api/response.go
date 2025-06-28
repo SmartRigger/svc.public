@@ -30,6 +30,8 @@ const (
 	MsgAuthenticateFailed  = "Authenticate failed"
 	CodeInvalidSession     = 10401002
 	MsgInvalidSession      = "Invalid session"
+	CodeNullSession        = 10401003
+	MsgNullSession         = "Session not found"
 	CodeUnauthorized       = 10401999
 	MsgUnauthorized        = "Unauthorized"
 	CodePermissionDenied   = 10403001

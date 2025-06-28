@@ -21,7 +21,7 @@ type ApiHTTPPostAuthLogin struct {
 
 type ApiHTTPPostEditAccount struct {
 	ID        string `json:"id" xml:"id" form:"id"`
-	Username  string `json:"user_name" xml:"user_name" form:"user_name"`
+	Name      string `json:"name" xml:"name" form:"name"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id"`
 	Status    *int   `json:"status" xml:"status" form:"status"`
 	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
@@ -29,11 +29,13 @@ type ApiHTTPPostEditAccount struct {
 }
 
 type ApiHTTPPostCreateAccount struct {
-	Username  string `json:"username" binding:"required"`
-	GroupID   string `json:"group_id" binding:"required"`
-	Status    int    `json:"status"`
-	RealName  string `json:"real_name"`
-	DisplayID string `json:"display_id"`
+	Username  string `json:"username" xml:"username" form:"username" binding:"required"`
+	GroupID   string `json:"group_id" xml:"group_id" form:"group_id" binding:"required"`
+	Password  string `json:"password" xml:"password" form:"password"`
+	Status    int    `json:"status" xml:"status" form:"status"`
+	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
+	Name      string `json:"name" xml:"name" form:"name"`
+	DisplayID string `json:"display_id" xml:"display_id" form:"display_id"`
 }
 
 type ApiHTTPPostEditCraft struct {
@@ -95,12 +97,13 @@ type ApiHTTPPostMeasurementRequest struct {
 }
 
 type ApiHTTPPostTemplateRequest struct {
-	ID              string `json:"id"`
-	TemplateName    string `json:"template_name"`
-	CraftID         string `json:"craft_id"`
-	Version         string `json:"version"`
-	Remarks         string `json:"remarks"`
-	ParameterConfig string `json:"parameter_config"`
+	ID              string `json:"id" xml:"id" form:"id"`
+	TemplateName    string `json:"template_name" xml:"template_name" form:"template_name"`
+	TemplateNumber  string `json:"template_number" xml:"template_number" form:"template_number"`
+	CraftID         string `json:"craft_id" xml:"craft_id" form:"craft_id"`
+	Version         string `json:"version" xml:"version" form:"version"`
+	Remarks         string `json:"remarks" xml:"remarks" form:"remarks"`
+	ParameterConfig string `json:"parameter_config" xml:"parameter_config" form:"parameter_config"`
 }
 
 type ApiHTTPPutToolRequest struct {
@@ -137,9 +140,9 @@ type ApiHTTPPostChangePassword struct {
 }
 
 type ApiHTTPPostChangePasswordByID struct {
-	ID          string `json:"id"`
-	OldPassword string `json:"old_password"`
-	NewPassword string `json:"new_password"`
+	ID string `json:"id" xml:"id" form:"id"`
+	//OldPassword string `json:"old_password"`
+	NewPassword string `json:"new_password" xml:"new_password"`
 }
 
 type ApiHTTPPostCreateDetectionTask struct {

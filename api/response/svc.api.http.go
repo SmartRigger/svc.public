@@ -17,6 +17,7 @@ type ApiHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
 	Name     string `json:"name" yaml:"name" xml:"name"`
+	RealName string `json:"real_name" yaml:"real_name" xml:"real_name"`
 	Avatar   string `json:"avatar" yaml:"avatar" xml:"avatar"`
 	Status   int    `json:"status" yaml:"status" xml:"status"`
 	Token    string `json:"token" yaml:"token" xml:"token"`
@@ -47,6 +48,7 @@ type ApiHTTPGetAccount struct {
 	ID        string `json:"id" yaml:"id" xml:"id"`
 	Username  string `json:"username" yaml:"username" xml:"username"`
 	RealName  string `json:"real_name" yaml:"real_name" xml:"real_name"`
+	Name      string `json:"name" yaml:"name" xml:"name"`
 	DisplayID string `json:"display_id" yaml:"display_id" xml:"display_id"`
 	GroupID   string `json:"group_id" yaml:"group_id" xml:"group_id"`
 	GroupName string `json:"group_name" yaml:"group_name" xml:"group_name"`
@@ -126,7 +128,9 @@ type ApiHTTPGetCraft struct {
 type ApiHTTPGetTemplateGet struct {
 	ID              string `json:"id" yaml:"id" xml:"id"`
 	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	TemplateNumber  string `json:"template_number" yaml:"template_number" xml:"template_number"`
 	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
+	Craft           any    `json:"craft" yaml:"craft" xml:"craft"`
 	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
 	CompilerName    string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version         string `json:"version" yaml:"version" xml:"version"`
@@ -138,7 +142,9 @@ type ApiHTTPGetTemplateGet struct {
 type ApiHTTPGetTemplate struct {
 	ID              string `json:"id" yaml:"id" xml:"id"`
 	TemplateName    string `json:"template_name" yaml:"template_name" xml:"template_name"`
+	TemplateNumber  string `json:"template_number" yaml:"template_number" xml:"template_number"`
 	CraftID         string `json:"craft_id" yaml:"craft_id" xml:"craft_id"`
+	Craft           any    `json:"craft" yaml:"craft" xml:"craft"`
 	CompilerID      string `json:"compiler_id" yaml:"compiler_id" xml:"compiler_id"`
 	CompilerName    string `json:"compiler_name" yaml:"compiler_name" xml:"compiler_name"`
 	Version         string `json:"version" yaml:"version" xml:"version"`
@@ -197,48 +203,48 @@ type ApiHTTPGetToolUsage struct {
 }
 
 type ApiHTTPGetDetectionTaskGet struct {
-	ID           string      `json:"id"`
-	TemplateID   string      `json:"template_id"`
-	TemplateName string      `json:"template_name"`
-	Template     interface{} `json:"template"`
-	CreatorID    string      `json:"creator_id"`
-	CreatorName  string      `json:"creator_name"`
-	Creator      interface{} `json:"creator"`
-	OperatorID   string      `json:"operator_id"`
-	OperatorName string      `json:"operator_name"`
-	Operator     interface{} `json:"operator"`
-	TaskDetail   string      `json:"task_detail"`
-	ReMatch      string      `json:"re_match"`
-	TaskType     string      `json:"task_type"`
-	GroupCode    string      `json:"group_code"`
-	ItemCount    int32       `json:"item_count"`
-	IsComplete   bool        `json:"is_complete"`
-	CompleteTime string      `json:"complete_time"`
-	CreatedAt    string      `json:"created_at"`
-	UpdatedAt    string      `json:"updated_at"`
-	Addition     string      `json:"addition"`
+	ID           string `json:"id"`
+	TemplateID   string `json:"template_id"`
+	TemplateName string `json:"template_name"`
+	Template     any    `json:"template"`
+	CreatorID    string `json:"creator_id"`
+	CreatorName  string `json:"creator_name"`
+	Creator      any    `json:"creator"`
+	OperatorID   string `json:"operator_id"`
+	OperatorName string `json:"operator_name"`
+	Operator     any    `json:"operator"`
+	TaskDetail   string `json:"task_detail"`
+	ReMatch      string `json:"re_match"`
+	TaskType     string `json:"task_type"`
+	GroupCode    string `json:"group_code"`
+	ItemCount    int32  `json:"item_count"`
+	IsComplete   bool   `json:"is_complete"`
+	CompleteTime string `json:"complete_time"`
+	CreatedAt    string `json:"created_at"`
+	UpdatedAt    string `json:"updated_at"`
+	Addition     string `json:"addition"`
 }
 
 type ApiHTTPGetDetectionTask struct {
-	ID           string      `json:"id"`
-	TemplateID   string      `json:"template_id"`
-	TemplateName string      `json:"template_name"`
-	Template     interface{} `json:"template"`
-	CreatorID    string      `json:"creator_id"`
-	CreatorName  string      `json:"creator_name"`
-	Creator      interface{} `json:"creator"`
-	OperatorID   string      `json:"operator_id"`
-	OperatorName string      `json:"operator_name"`
-	Operator     interface{} `json:"operator"`
-	TaskDetail   string      `json:"task_detail"`
-	ReMatch      string      `json:"re_match"`
-	TaskType     string      `json:"task_type"`
-	GroupCode    string      `json:"group_code"`
-	ItemCount    int32       `json:"item_count"`
-	IsComplete   bool        `json:"is_complete"`
-	CompleteTime string      `json:"complete_time"`
-	CreatedAt    string      `json:"created_at"`
-	Addition     string      `json:"addition"`
+	ID           string `json:"id"`
+	TemplateID   string `json:"template_id"`
+	TemplateName string `json:"template_name"`
+	Template     any    `json:"template"`
+	CreatorID    string `json:"creator_id"`
+	CreatorName  string `json:"creator_name"`
+	Creator      any    `json:"creator"`
+	OperatorID   string `json:"operator_id"`
+	OperatorName string `json:"operator_name"`
+	Operator     any    `json:"operator"`
+	TaskDetail   string `json:"task_detail"`
+	ReMatch      string `json:"re_match"`
+	TaskType     string `json:"task_type"`
+	GroupCode    string `json:"group_code"`
+	ItemCount    int32  `json:"item_count"`
+	IsComplete   bool   `json:"is_complete"`
+	CompleteTime string `json:"complete_time"`
+	CreatedAt    string `json:"created_at"`
+	Addition     string `json:"addition"`
 }
 
 /*
