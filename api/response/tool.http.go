@@ -12,7 +12,7 @@ type ApiHTTPGetToolGet struct {
 	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
 	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
 	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
-	ExpireDate               string `json:"expired_date" yaml:"expired_date" xml:"expired_date"`
+	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
 }
 
 type ApiHTTPGetTool struct {
@@ -28,5 +28,5 @@ type ApiHTTPGetTool struct {
 	SelfMutualInspection     bool   `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
 	InspectionPersonnel      string `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
 	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
-	ExpireDate               string `json:"expired_date" yaml:"expired_date" xml:"expired_date"`
+	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
 }
