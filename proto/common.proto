@@ -12,6 +12,7 @@ import "google/protobuf/timestamp.proto";
 
 service Common {
   rpc GetAllTools(GetAllToolsReq) returns (GetAllToolsResp);
+  rpc UpdateToolState(UpdateToolStateReq) returns (UpdateToolStateResp);
 };
 
 /* {{{ [Tool Information] */
@@ -31,12 +32,20 @@ message Tool {
 };
 /* }}} */
 
-message GetAllToolsReq {
-  string category = 1;
-};
+message GetAllToolsReq { string category = 1; };
 
 message GetAllToolsResp {
   bool status = 1;
   string message = 2;
   repeated Tool tools = 3;
+};
+
+message UpdateToolStateReq {
+  Tool tool = 1;
+  int32 state = 2;
+};
+
+message UpdateToolStateResp {
+  Tool tool = 1;
+  bool updated = 2;
 };
