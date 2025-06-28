@@ -24,11 +24,12 @@ type ApiHTTPPostEditAccount struct {
 	Username  string `json:"user_name" xml:"user_name" form:"user_name"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id"`
 	Status    *int   `json:"status" xml:"status" form:"status"`
-	DisplayID string `json:"display_id"`
+	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
+	DisplayID string `json:"display_id" xml:"display_id" form:"display_id"`
 }
 
 type ApiHTTPPostCreateAccount struct {
-	UserName  string `json:"user_name" binding:"required"`
+	Username  string `json:"username" binding:"required"`
 	GroupID   string `json:"group_id" binding:"required"`
 	Status    int    `json:"status"`
 	RealName  string `json:"real_name"`
