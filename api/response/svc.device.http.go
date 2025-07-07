@@ -17,6 +17,10 @@ type DeviceHTTPPostMeasure struct {
 	Status bool `json:"status" xml:"status" form:"status"`
 }
 
+type AdjustSpanner struct {
+	Result bool `json:"result" xml:"result" form:"result"`
+}
+
 /*
  * Local variables:
  * tab-width: 4

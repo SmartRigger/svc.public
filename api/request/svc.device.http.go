@@ -19,6 +19,13 @@ type DeviceHTTPPostMeasure struct {
 	Detail   string `json:"detail,omitempty" xml:"detail,omitempty" form:"detail,omitempty"`
 }
 
+type AdjustSpanner struct {
+	ID     string `json:"id" xml:"id" form:"id"`
+	Ident  string `json:"ident" xml:"ident" form:"ident"`
+	Bank   string `json:"bank" xml:"bank" form:"bank"`
+	Torque string `json:"torque" xml:"torque" form:"torque"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
