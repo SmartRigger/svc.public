@@ -17,6 +17,17 @@ type ToolshedHTTPEssential struct {
 	Name string `json:"name" xml:"name" form:"name"`
 }
 
+type ToolshedHTTPStaff struct {
+	Name string `json:"name" xml:"name" form:"name"`
+}
+
+type ToolshedHTTPAccount struct{}
+
+type ToolshedHTTPPostAuthLogin struct {
+	Username string `json:"username" xml:"username" form:"username"`
+	Password string `json:"password" xml:"password" form:"password"`
+}
+
 /*
  * Local variables:
  * tab-width: 4

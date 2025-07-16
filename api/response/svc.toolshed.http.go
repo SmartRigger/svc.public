@@ -18,6 +18,24 @@ type ToolshedHTTPEssential struct {
 	Name string `json:"name" xml:"name" yaml:"name"`
 }
 
+type ToolshedHTTPStaff struct {
+	ID   string `json:"id" xml:"id" yaml:"id"`
+	Name string `json:"name" xml:"name" yaml:"name"`
+}
+
+type ToolshedHTTPAccount struct{}
+
+type ToolshedHTTPPostAuthLogin struct {
+	ID       string `json:"id" yaml:"id" xml:"id"`
+	Username string `json:"username" yaml:"username" xml:"username"`
+	Name     string `json:"name" yaml:"name" xml:"name"`
+	RealName string `json:"real_name" yaml:"real_name" xml:"real_name"`
+	Avatar   string `json:"avatar" yaml:"avatar" xml:"avatar"`
+	Status   int    `json:"status" yaml:"status" xml:"status"`
+	Token    string `json:"token" yaml:"token" xml:"token"`
+	Expired  int64  `json:"expired" yaml:"expired" xml:"expired"`
+}
+
 /*
  * Local variables:
  * tab-width: 4

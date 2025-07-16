@@ -20,10 +20,9 @@ type DeviceHTTPPostMeasure struct {
 }
 
 type AdjustSpanner struct {
-	ID     string `json:"id" xml:"id" form:"id"`
-	Ident  string `json:"ident" xml:"ident" form:"ident"`
-	Bank   string `json:"bank" xml:"bank" form:"bank"`
-	Torque string `json:"torque" xml:"torque" form:"torque"`
+	IP     string `json:"ip" xml:"ip" form:"ip"`
+	Pset   uint8  `json:"pset" xml:"pset" form:"pset"`
+	Torque uint16 `json:"torque" xml:"torque" form:"torque"`
 }
 
 /*
