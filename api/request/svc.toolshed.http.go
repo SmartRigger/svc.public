@@ -21,11 +21,20 @@ type ToolshedHTTPStaff struct {
 	Name string `json:"name" xml:"name" form:"name"`
 }
 
-type ToolshedHTTPAccount struct{}
+type ToolshedHTTPAccount struct {
+	Username string `json:"username" xml:"username" form:"username"`
+	Name     string `json:"name" xml:"name" form:"name"`
+	Password string `json:"password" xml:"password" form:"password"`
+}
 
 type ToolshedHTTPPostAuthLogin struct {
 	Username string `json:"username" xml:"username" form:"username"`
 	Password string `json:"password" xml:"password" form:"password"`
+}
+
+type ToolshedHTTPPostScan struct {
+	Type string `json:"type" xml:"type" form:"type"`
+	Data string `json:"data" xml:"data" form:"data"`
 }
 
 /*

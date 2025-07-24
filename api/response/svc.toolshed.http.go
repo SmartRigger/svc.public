@@ -23,7 +23,11 @@ type ToolshedHTTPStaff struct {
 	Name string `json:"name" xml:"name" yaml:"name"`
 }
 
-type ToolshedHTTPAccount struct{}
+type ToolshedHTTPAccount struct {
+	ID       string `json:"id" xml:"id" yaml:"id"`
+	Username string `json:"username" xml:"username" yaml:"username"`
+	Name     string `json:"name" xml:"name" yaml:"name"`
+}
 
 type ToolshedHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
