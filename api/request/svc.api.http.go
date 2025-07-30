@@ -146,28 +146,28 @@ type ApiHTTPPostChangePasswordByID struct {
 }
 
 type ApiHTTPPostCreateDetectionTask struct {
-	TemplateID string `json:"template_id" binding:"required"`
-	CreatorID  string `json:"creator_id" binding:"required"`
-	OperatorID string `json:"operator_id"`
-	TaskDetail string `json:"task_detail"`
-	ReMatch    string `json:"re_match"`
-	TaskType   string `json:"task_type"`
-	GroupCode  string `json:"group_code" binding:"required"`
-	ItemCount  int32  `json:"item_count"`
-	IsComplete bool   `json:"is_complete"`
+	TemplateID  string   `json:"template_id" binding:"required"`
+	CreatorID   string   `json:"creator_id" binding:"required"`
+	OperatorIDs []string `json:"operator_ids"`
+	TaskDetail  string   `json:"task_detail"`
+	ReMatch     string   `json:"re_match"`
+	TaskType    string   `json:"task_type"`
+	GroupCode   string   `json:"group_code" binding:"required"`
+	ItemCount   int32    `json:"item_count"`
+	IsComplete  bool     `json:"is_complete"`
 }
 
 type ApiHTTPPostEditDetectionTask struct {
-	ID         string `json:"id" binding:"required"`
-	TemplateID string `json:"template_id"`
-	OperatorID string `json:"operator_id"`
-	TaskDetail string `json:"task_detail"`
-	ReMatch    string `json:"re_match"`
-	TaskType   string `json:"task_type"`
-	GroupCode  string `json:"group_code"`
-	ItemCount  *int32 `json:"item_count"`
-	IsComplete *bool  `json:"is_complete"`
-	ReportData string `json:"reportData"`
+	ID          string   `json:"id" binding:"required"`
+	TemplateID  string   `json:"template_id"`
+	OperatorIDs []string `json:"operator_ids"`
+	TaskDetail  string   `json:"task_detail"`
+	ReMatch     string   `json:"re_match"`
+	TaskType    string   `json:"task_type"`
+	GroupCode   string   `json:"group_code"`
+	ItemCount   *int32   `json:"item_count"`
+	IsComplete  *bool    `json:"is_complete"`
+	ReportData  string   `json:"reportData"`
 }
 
 type ApiHTTPPostIOTServe struct {
@@ -180,6 +180,43 @@ type ApiHTTPPostIOTServe struct {
 		TerminalNo []string `json:"terminalNo"`
 		ProcessNo  string   `json:"processNo"`
 	} `json:"data"`
+}
+
+type ApiHTTPPostInspection struct {
+	AccountID string `json:"account_id"`
+	ToolID    string `json:"tool_id"`
+	Status    int    `json:"status"`
+	Value     string `json:"value"`
+}
+
+type ApiHTTPPostToolCreate struct {
+	Name                     string `json:"name" xml:"name" form:"name"`
+	Category                 string `json:"category" xml:"category" form:"category"`
+	Range                    string `json:"range" xml:"range" form:"range"`
+	InspectionDate           string `json:"inspection_date" xml:"inspection_date" form:"inspection_date"`
+	InspectionPersonnel      string `json:"inspection_personnel" xml:"inspection_personnel" form:"inspection_personnel"`
+	DailyStartupVerification bool   `json:"daily_startup_verification" xml:"daily_startup_verification" form:"daily_startup_verification"`
+	SelfMutualInspection     bool   `json:"self_mutual_inspection" xml:"self_mutual_inspection" form:"self_mutual_inspection"`
+	MeasurementUnit          string `json:"measurement_unit" xml:"measurement_unit" form:"measurement_unit"`
+	RegistrationDate         string `json:"registration_date" xml:"registration_date" form:"registration_date"`
+}
+
+type ApiHTTPPostToolUpdate struct {
+	Name                     string `json:"name" xml:"name" form:"name"`
+	Category                 string `json:"category" xml:"category" form:"category"`
+	Range                    string `json:"range" xml:"range" form:"range"`
+	InspectionDate           string `json:"inspection_date" xml:"inspection_date" form:"inspection_date"`
+	InspectionPersonnel      string `json:"inspection_personnel" xml:"inspection_personnel" form:"inspection_personnel"`
+	DailyStartupVerification bool   `json:"daily_startup_verification" xml:"daily_startup_verification" form:"daily_startup_verification"`
+	SelfMutualInspection     bool   `json:"self_mutual_inspection" xml:"self_mutual_inspection" form:"self_mutual_inspection"`
+	MeasurementUnit          string `json:"measurement_unit" xml:"measurement_unit" form:"measurement_unit"`
+	RegistrationDate         string `json:"registration_date" xml:"registration_date" form:"registration_date"`
+	OwnerID                  string `json:"owner_id" xml:"owner_id" form:"owner_id"`
+}
+
+type ApiHTTPGetToolList struct {
+	Page  int `json:"page" xml:"page" form:"page"`
+	Limit int `json:"limit" xml:"limit" form:"limit"`
 }
 
 /*

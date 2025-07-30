@@ -18,7 +18,13 @@ type ToolshedHTTPEssential struct {
 }
 
 type ToolshedHTTPStaff struct {
-	Name string `json:"name" xml:"name" form:"name"`
+	Name      string `json:"name" xml:"name" form:"name"`
+	DisplayNo string `json:"display_no" xml:"display_no" form:"display_no"`
+	CardNo    string `json:"card_no" xml:"card_no" form:"card_no"`
+	TeamID    string `json:"team_id" xml:"team_id" form:"team_id"`
+	JobTitle  string `json:"job_title" xml:"job_title" form:"job_title"`
+	Telephone string `json:"telephone" xml:"telephone" form:"telephone"`
+	Status    int    `json:"status" xml:"status" form:"status"`
 }
 
 type ToolshedHTTPAccount struct {

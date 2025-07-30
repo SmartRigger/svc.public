@@ -210,19 +210,19 @@ type ApiHTTPGetDetectionTaskGet struct {
 	CreatorID    string `json:"creator_id"`
 	CreatorName  string `json:"creator_name"`
 	Creator      any    `json:"creator"`
-	OperatorID   string `json:"operator_id"`
-	OperatorName string `json:"operator_name"`
-	Operator     any    `json:"operator"`
-	TaskDetail   string `json:"task_detail"`
-	ReMatch      string `json:"re_match"`
-	TaskType     string `json:"task_type"`
-	GroupCode    string `json:"group_code"`
-	ItemCount    int32  `json:"item_count"`
-	IsComplete   bool   `json:"is_complete"`
-	CompleteTime string `json:"complete_time"`
-	CreatedAt    string `json:"created_at"`
-	UpdatedAt    string `json:"updated_at"`
-	Addition     string `json:"addition"`
+	//OperatorID   []string                `json:"operator_id"`
+	//OperatorName []string                `json:"operator_name"`
+	Operators    []*ApiHTTPGetAccountGet `json:"operators"`
+	TaskDetail   string                  `json:"task_detail"`
+	ReMatch      string                  `json:"re_match"`
+	TaskType     string                  `json:"task_type"`
+	GroupCode    string                  `json:"group_code"`
+	ItemCount    int32                   `json:"item_count"`
+	IsComplete   bool                    `json:"is_complete"`
+	CompleteTime string                  `json:"complete_time"`
+	CreatedAt    string                  `json:"created_at"`
+	UpdatedAt    string                  `json:"updated_at"`
+	Addition     string                  `json:"addition"`
 }
 
 type ApiHTTPGetDetectionTask struct {
@@ -233,18 +233,59 @@ type ApiHTTPGetDetectionTask struct {
 	CreatorID    string `json:"creator_id"`
 	CreatorName  string `json:"creator_name"`
 	Creator      any    `json:"creator"`
-	OperatorID   string `json:"operator_id"`
-	OperatorName string `json:"operator_name"`
-	Operator     any    `json:"operator"`
-	TaskDetail   string `json:"task_detail"`
-	ReMatch      string `json:"re_match"`
-	TaskType     string `json:"task_type"`
-	GroupCode    string `json:"group_code"`
-	ItemCount    int32  `json:"item_count"`
-	IsComplete   bool   `json:"is_complete"`
-	CompleteTime string `json:"complete_time"`
-	CreatedAt    string `json:"created_at"`
-	Addition     string `json:"addition"`
+	//OperatorID   []string `json:"operator_id"`
+	//OperatorName []string `json:"operator_name"`
+	Operators    []*ApiHTTPGetAccountGet `json:"operators"`
+	TaskDetail   string                  `json:"task_detail"`
+	ReMatch      string                  `json:"re_match"`
+	TaskType     string                  `json:"task_type"`
+	GroupCode    string                  `json:"group_code"`
+	ItemCount    int32                   `json:"item_count"`
+	IsComplete   bool                    `json:"is_complete"`
+	CompleteTime string                  `json:"complete_time"`
+	CreatedAt    string                  `json:"created_at"`
+	Addition     string                  `json:"addition"`
+}
+
+type ApiHTTPGetInspection struct {
+	ID        string `json:"id"`
+	AccountID string `json:"account_id"`
+	ToolID    string `json:"tool_id"`
+	Status    int    `json:"status"`
+	Value     string `json:"value"`
+}
+
+type ApiHTTPGetToolGet struct {
+	ID                       string `json:"id" yaml:"id" xml:"id"`
+	Name                     string `json:"name" yaml:"name" xml:"name"`
+	Category                 string `json:"category" yaml:"category" xml:"category"`
+	Range                    string `json:"range" yaml:"range" xml:"range"`
+	InspectionDate           string `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
+	InspectionPersonnel      string `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
+	DailyStartupVerification bool   `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
+	SelfMutualInspection     bool   `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
+	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
+	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
+	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
+	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	OwnerID                  string `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
+}
+
+type ApiHTTPGetTool struct {
+	ID                       string `json:"id" yaml:"id" xml:"id"`
+	Name                     string `json:"name" yaml:"name" xml:"name"`
+	Category                 string `json:"category" yaml:"category" xml:"category"`
+	Range                    string `json:"range" yaml:"range" xml:"range"`
+	InspectionDate           string `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
+	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
+	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
+	CreatedAt                string `json:"created_at" yaml:"created_at" xml:"created_at"`
+	DailyStartupVerification bool   `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
+	SelfMutualInspection     bool   `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
+	InspectionPersonnel      string `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
+	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
+	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	OwnerID                  string `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
 }
 
 /*
