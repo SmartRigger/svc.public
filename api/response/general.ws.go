@@ -35,6 +35,11 @@ type WSMeasure struct {
 	} `json:"data"`
 }
 
+type WSScan struct {
+	Type string `json:"type"`
+	Data string `json:"data"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
