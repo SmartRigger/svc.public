@@ -47,6 +47,7 @@ type ToolshedHTTPTool struct {
 	PlaceID        string `json:"place_id" xml:"place_id" form:"place_id"`
 	VerifierID     string `json:"verifier_id" xml:"verifier_id" form:"verifier_id"`
 	SubmitterID    string `json:"submitter_id" xml:"submitter_id" form:"submitter_id"`
+	WorkshopID     string `json:"workshop_id" xml:"workshop_id" form:"workshop_id"`
 }
 
 type ToolshedHTTPPostAuthLogin struct {

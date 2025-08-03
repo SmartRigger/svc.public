@@ -56,6 +56,11 @@ type ToolshedHTTPTool struct {
 	Verifier       any    `json:"verifier" xml:"verifier" yaml:"verifier"`
 	SubmitterID    string `json:"submitter_id" xml:"submitter_id" yaml:"submitter_id"`
 	Submitter      any    `json:"submitter" xml:"submitter" yaml:"submitter"`
+	WorkshopID     string `json:"workshop_id" xml:"workshop_id" yaml:"workshop_id"`
+	Workshop       any    `json:"workshop" xml:"workshop" yaml:"workshop"`
+	HolderID       string `json:"holder_id" xml:"holder_id" yaml:"holder_id"`
+	Holder         any    `json:"holder" xml:"holder" yaml:"holder"`
+	Status         int    `json:"status" xml:"status" yaml:"status"`
 	ReleasedAt     string `json:"released_at" xml:"released_at" yaml:"released_at"`
 }
 
