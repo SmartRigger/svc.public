@@ -46,6 +46,9 @@ type ToolshedHTTPTool struct {
 	Model          string `json:"model" xml:"model" yaml:"model"`
 	Accuracy       string `json:"accuracy" xml:"accuracy" yaml:"accuracy"`
 	Range          string `json:"range" xml:"range" yaml:"range"`
+	Position       string `json:"position" xml:"position" yaml:"position"`
+	Description    string `json:"description" xml:"description" yaml:"description"`
+	Image          string `json:"image" xml:"image" yaml:"image"`
 	CategoryID     string `json:"category_id" xml:"category_id" yaml:"category_id"`
 	Category       any    `json:"category" xml:"category" yaml:"category"`
 	ManufacturerID string `json:"manufacturer_id" xml:"manufacturer_id" yaml:"manufactureer_id"`
@@ -72,6 +75,13 @@ type ToolshedHTTPStatisticsSummary struct {
 	AvailableTools int64 `json:"available_tools" xml:"available_tools" yaml:"available_tools"`
 	BorrowedTools  int64 `json:"borrowed_tools" xml:"borrowed_tools" yaml:"borrowed_tools"`
 	OverdueTools   int64 `json:"overdue_tools" xml:"overdue_tools" yaml:"overdue_tools"`
+}
+
+type ToolshedHTTPStatisticsTool struct {
+	Total     int64 `json:"total" xml:"total" yaml:"total"`
+	Available int64 `json:"available" xml:"available" yaml:"available"`
+	Borrowed  int64 `json:"borrowed" xml:"borrowed" yaml:"borrowed"`
+	Overdue   int64 `json:"overdue" xml:"overdue" yaml:"overdue"`
 }
 
 type ToolshedHTTPPostAuthLogin struct {

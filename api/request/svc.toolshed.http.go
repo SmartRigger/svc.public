@@ -41,6 +41,10 @@ type ToolshedHTTPTool struct {
 	Model          string `json:"model" xml:"model" form:"model"`
 	Accuracy       string `json:"accuracy" xml:"accuracy" form:"accuracy"`
 	Range          string `json:"range" xml:"range" form:"range"`
+	Status         int    `json:"status" xml:"status" form:"status"`
+	Position       string `json:"position" xml:"position" form:"position"`
+	Description    string `json:"description" xml:"description" form:"description"`
+	Image          string `json:"image" xml:"image" form:"image"`
 	ReleasedAt     string `json:"released_at" xml:"released_at" form:"released_at"`
 	CategoryID     string `json:"category_id" xml:"category_id" form:"category_id"`
 	ManufacturerID string `json:"manufacturer_id" xml:"manufacturer_id" form:"manufacturer_id"`
