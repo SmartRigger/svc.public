@@ -24,9 +24,9 @@ type ToolshedHTTPStaff struct {
 	DisplayNo    string `json:"display_no" xml:"display_no" yaml:"display_no"`
 	CardNo       string `json:"card_no" xml:"card_no" yaml:"card_no"`
 	TeamID       string `json:"team_id" xml:"team_id" yaml:"team_id"`
-	Team         any    `json:"team" xml:"team" yaml:"team"`
+	Team         any    `json:"team,omitempty" xml:"team,omitempty" yaml:"team,omitempty"`
 	DepartmentID string `json:"department_id" xml:"department_id" yaml:"department_id"`
-	Department   any    `json:"department" xml:"department" yaml:"department"`
+	Department   any    `json:"department,omitempty" xml:"department,omitempty" yaml:"department,omitempty"`
 	JobTitle     string `json:"job_title" xml:"job_title" yaml:"job_title"`
 	Telephone    string `json:"telephone" xml:"telephone" yaml:"telephone"`
 	Status       int    `json:"status" xml:"status" yaml:"status"`
@@ -50,19 +50,19 @@ type ToolshedHTTPTool struct {
 	Description    string `json:"description" xml:"description" yaml:"description"`
 	Image          string `json:"image" xml:"image" yaml:"image"`
 	CategoryID     string `json:"category_id" xml:"category_id" yaml:"category_id"`
-	Category       any    `json:"category" xml:"category" yaml:"category"`
+	Category       any    `json:"category,omitempty" xml:"category,omitempty" yaml:"category,omitempty"`
 	ManufacturerID string `json:"manufacturer_id" xml:"manufacturer_id" yaml:"manufactureer_id"`
-	Manufacturer   any    `json:"manufacturer" xml:"manufacturer" yaml:"manufacturer"`
+	Manufacturer   any    `json:"manufacturer,omitempty" xml:"manufacturer,omitempty" yaml:"manufacturer,omitempty"`
 	PlaceID        string `json:"place_id" xml:"place_id" yaml:"place_id"`
-	Place          any    `json:"place" xml:"place" yaml:"place"`
+	Place          any    `json:"place,omitempty" xml:"place,omitempty" yaml:"place,omitempty"`
 	VerifierID     string `json:"verifier_id" xml:"verifier_id" yaml:"verifier_id"`
-	Verifier       any    `json:"verifier" xml:"verifier" yaml:"verifier"`
+	Verifier       any    `json:"verifier,omitempty" xml:"verifier,omitempty" yaml:"verifier,omitempty"`
 	SubmitterID    string `json:"submitter_id" xml:"submitter_id" yaml:"submitter_id"`
-	Submitter      any    `json:"submitter" xml:"submitter" yaml:"submitter"`
+	Submitter      any    `json:"submitter,omitempty" xml:"submitter,omitempty" yaml:"submitter,omitempty"`
 	WorkshopID     string `json:"workshop_id" xml:"workshop_id" yaml:"workshop_id"`
-	Workshop       any    `json:"workshop" xml:"workshop" yaml:"workshop"`
+	Workshop       any    `json:"workshop,omitempty" xml:"workshop,omitempty" yaml:"workshop,omitempty"`
 	HolderID       string `json:"holder_id" xml:"holder_id" yaml:"holder_id"`
-	Holder         any    `json:"holder" xml:"holder" yaml:"holder"`
+	Holder         any    `json:"holder,omitempty" xml:"holder,omitempty" yaml:"holder,omitempty"`
 	Status         int    `json:"status" xml:"status" yaml:"status"`
 	ReleasedAt     string `json:"released_at" xml:"released_at" yaml:"released_at"`
 }
@@ -84,6 +84,18 @@ type ToolshedHTTPStatisticsTool struct {
 	Overdue   int64 `json:"overdue" xml:"overdue" yaml:"overdue"`
 }
 
+type ToolshedHTTPStatisticsStaff struct {
+	Total         int64 `json:"total" xml:"total" yaml:"total"`
+	TotalActive   int64 `json:"total_active" xml:"total_active" yaml:"total_active"`
+	TotalInactive int64 `json:"total_inactive" xml:"total_inactive" yaml:"total_inactive"`
+}
+
+type ToolshedHTTPStatisticsVerify struct {
+	Total int64 `json:"total" xml:"total" yaml:"total"`
+	Pass  int64 `json:"pass" xml:"pass" yaml:"pass"`
+	Fail  int64 `json:"fail" xml:"fail" yaml:"fail"`
+}
+
 type ToolshedHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
@@ -103,6 +115,26 @@ type ToolshedHTTPPostBorrow struct {
 type ToolshedHTTPPostRevert struct {
 	StaffID         string   `json:"staff_id" xml:"staff_id" form:"staff_id"`
 	RevertedToolIDs []string `json:"reverted_tool_ids" xml:"reverted_tool_ids" form:"reverted_tool_ids"`
+}
+
+type ToolshedHTTPActivity struct {
+	ID        string `json:"id" xml:"id" yaml:"id"`
+	ToolID    string `json:"tool_id" xml:"tool_id" yaml:"tool_id"`
+	Tool      any    `json:"tool,omitempty" xml:"tool,omitempty" yaml:"tool,omitempty"`
+	StaffID   string `json:"staff_id" xml:"staff_id" yaml:"staff_id"`
+	Staff     any    `json:"staff,omitempty" xml:"staff,omitempty" yaml:"staff,omitempty"`
+	Action    string `json:"action" xml:"action" yaml:"action"`
+	CreatedAt string `json:"created_at" xml:"created_at" yaml:"created_at"`
+}
+
+type ToolshedHTTPItemCount struct {
+	ID    string `json:"id" xml:"id" yaml:"id"`
+	Name  string `json:"name" xml:"name" yaml:"name"`
+	Count int64  `json:"count" xml:"count" yaml:"count"`
+}
+
+type ToolshedHTTPCategories struct {
+	Categories []*ToolshedHTTPItemCount `json:"categories" xml:"categories" yaml:"categories"`
 }
 
 /*

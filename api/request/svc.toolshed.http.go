@@ -69,6 +69,10 @@ type ToolshedHTTPPostRevert struct {
 	ToolIDs []string `json:"tool_ids" xml:"tool_ids" form:"tool_ids"`
 }
 
+type ToolshedHTTPPostVerify struct {
+	ToolID string `json:"tool_id" xml:"tool_id" form:"tool_id"`
+}
+
 type ToolshedHTTPPostScan struct {
 	Type string `json:"type" xml:"type" form:"type"`
 	Data string `json:"data" xml:"data" form:"data"`
