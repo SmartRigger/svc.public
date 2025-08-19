@@ -13,6 +13,8 @@
 
 package response
 
+import "time"
+
 type ApiHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
@@ -286,6 +288,31 @@ type ApiHTTPGetTool struct {
 	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
 	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
 	OwnerID                  string `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
+}
+
+type ApiHTTPGetMeasure struct {
+	ID        string               `json:"id" yaml:"id" xml:"id"`
+	TaskID    string               `json:"task_id" yaml:"task_id" xml:"task_id"`
+	Index     string               `json:"index" yaml:"index" xml:"index"`
+	IndexNo   string               `json:"index_no" yaml:"index_no" xml:"index_no"`
+	SerialNo  string               `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
+	Status    int                  `json:"status" yaml:"status" xml:"status"`
+	Value     string               `json:"value" yaml:"value" xml:"value"`
+	PT        string               `json:"pt" yaml:"pt" xml:"pt"`
+	Values    []*ApiHTTPGetDataset `json:"values" yaml:"values" xml:"values"`
+	CreatedAt time.Time            `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetDataset struct {
+	ID         string    `json:"id" yaml:"id" xml:"id"`
+	MeasureID  string    `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
+	DeviceID   string    `json:"device_id" yaml:"device_id" xml:"device_id"`
+	CreatorID  string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
+	Creator    any       `json:"creator" yaml:"creator" xml:"creator"`
+	Value      string    `json:"value" yaml:"value" xml:"value"`
+	Detail     string    `json:"detail" yaml:"detail" xml:"detail"`
+	Index      int       `json:"index" yaml:"index" xml:"index"`
+	CreateTime time.Time `json:"create_time" yaml:"create_time" xml:"create_time"`
 }
 
 /*

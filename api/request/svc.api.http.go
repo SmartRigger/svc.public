@@ -220,6 +220,28 @@ type ApiHTTPGetToolList struct {
 	Limit int `json:"limit" xml:"limit" form:"limit"`
 }
 
+type ApiHTTPPostMeasure struct {
+	ID       string                `json:"id" xml:"id" form:"id"`
+	TaskID   string                `json:"task_id" xml:"task_id" form:"task_id"`
+	Index    string                `json:"index" xml:"index" form:"index"`
+	IndexNo  string                `json:"index_no" xml:"index_no" form:"index_no"`
+	SerialNo string                `json:"serial_no" xml:"serial_no" form:"serial_no"`
+	Status   int                   `json:"status" xml:"status" form:"status"`
+	Value    string                `json:"value" xml:"value" form:"value"`
+	PT       string                `json:"pt" xml:"pt" form:"pt"`
+	Values   []*ApiHTTPPostDataset `json:"values" xml:"values" form:"values"`
+}
+
+type ApiHTTPPostDataset struct {
+	MeasureID  string `json:"measure_id" xml:"measure_id" form:"measure_id"`
+	DeviceID   string `json:"device_id" xml:"device_id" form:"device_id"`
+	CreatorID  string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	Value      string `json:"value" xml:"value" form:"value"`
+	Detail     string `json:"detail" xml:"detail" form:"detail"`
+	Index      int    `json:"index" xml:"index" form:"index"`
+	CreateTime string `json:"create_time" xml:"create_time" form:"create_time"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
