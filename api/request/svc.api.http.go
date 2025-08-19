@@ -118,6 +118,7 @@ type ApiHTTPPutToolRequest struct {
 	MeasurementUnit          string `json:"measurement_unit"`
 	ExpireDate               string `json:"expire_date"`
 	Detail                   string `json:"detail"`
+	OwnerID                  string `json:"owner_id"`
 }
 
 type ApiHTTPPostToolRequest struct {
