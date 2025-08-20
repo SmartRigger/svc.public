@@ -242,6 +242,42 @@ type ApiHTTPPostDataset struct {
 	CreateTime string `json:"create_time" xml:"create_time" form:"create_time"`
 }
 
+type ApiHTTPPostTechnology struct {
+	ID            string `json:"id" xml:"id" form:"id"`
+	Number        string `json:"number" xml:"number" form:"number"`
+	Name          string `json:"name" xml:"name" form:"name"`
+	TrainType     string `json:"train_type" xml:"train_type" form:"train_type"`
+	CreatorID     string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	ItemList      string `json:"item_list" xml:"item_list" form:"item_list"`
+	MatchRelation string `json:"match_relation" xml:"match_relation"`
+}
+
+type ApiHTTPPostTask struct {
+	ID           string `json:"id" xml:"id" form:"id"`
+	TechnologyID string `json:"technology_id" xml:"technology_id" form:"technology_id"`
+	CreatorID    string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	GroupCode    string `json:"group_code" xml:"group_code" form:"group_code"`
+	ItemCount    int32  `json:"item_count" xml:"item_count" form:"item_count"`
+	Detail       string `json:"detail" xml:"detail" form:"detail"`
+	Rematch      string `json:"re_match" xml:"re_match" form:"re_match"`
+	Type         string `json:"type" xml:"type" form:"type"`
+	IsComplete   bool   `json:"is_complete" xml:"is_complete" form:"is_complete"`
+	CompleteTime string `json:"complete_time" xml:"complete_time" form:"complete_time"`
+	Addition     string `json:"addition" xml:"addition" form:"addition"`
+
+	//Operators []*ApiHTTPPostCreateAccount `json:"operators" xml:"operators" form:"operators"`
+	Points      []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
+	OperatorIDs []string           `json:"operator_ids" xml:"operator_ids" form:"operator_ids"`
+}
+
+type ApiHTTPPostPoint struct {
+	ID       string `json:"id" xml:"id" form:"id"`
+	TaskID   string `json:"task_id" xml:"task_id" form:"task_id"`
+	Index    int32  `json:"index" xml:"index" form:"index"`
+	Type     string `json:"type" xml:"type" form:"type"`
+	PalletID int32  `json:"pallet_id" xml:"pallet_id" form:"pallet_id"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
