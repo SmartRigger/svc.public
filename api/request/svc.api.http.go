@@ -223,6 +223,8 @@ type ApiHTTPGetToolList struct {
 type ApiHTTPPostMeasure struct {
 	ID       string                `json:"id" xml:"id" form:"id"`
 	TaskID   string                `json:"task_id" xml:"task_id" form:"task_id"`
+	ItemID   string                `json:"item_id" xml:"item_id" form:"item_id"`
+	PointID  string                `json:"point_id" xml:"point_id" form:"point_id"`
 	Index    string                `json:"index" xml:"index" form:"index"`
 	IndexNo  string                `json:"index_no" xml:"index_no" form:"index_no"`
 	SerialNo string                `json:"serial_no" xml:"serial_no" form:"serial_no"`
@@ -233,6 +235,7 @@ type ApiHTTPPostMeasure struct {
 }
 
 type ApiHTTPPostDataset struct {
+	ID         string `json:"id" xml:"id" form:"id"`
 	MeasureID  string `json:"measure_id" xml:"measure_id" form:"measure_id"`
 	DeviceID   string `json:"device_id" xml:"device_id" form:"device_id"`
 	CreatorID  string `json:"creator_id" xml:"creator_id" form:"creator_id"`
@@ -253,29 +256,39 @@ type ApiHTTPPostTechnology struct {
 }
 
 type ApiHTTPPostTask struct {
-	ID           string `json:"id" xml:"id" form:"id"`
-	TechnologyID string `json:"technology_id" xml:"technology_id" form:"technology_id"`
-	CreatorID    string `json:"creator_id" xml:"creator_id" form:"creator_id"`
-	GroupCode    string `json:"group_code" xml:"group_code" form:"group_code"`
-	ItemCount    int32  `json:"item_count" xml:"item_count" form:"item_count"`
-	Detail       string `json:"detail" xml:"detail" form:"detail"`
-	Rematch      string `json:"re_match" xml:"re_match" form:"re_match"`
-	Type         string `json:"type" xml:"type" form:"type"`
-	IsComplete   bool   `json:"is_complete" xml:"is_complete" form:"is_complete"`
-	CompleteTime string `json:"complete_time" xml:"complete_time" form:"complete_time"`
-	Addition     string `json:"addition" xml:"addition" form:"addition"`
+	ID           string   `json:"id" xml:"id" form:"id"`
+	TechnologyID string   `json:"technology_id" xml:"technology_id" form:"technology_id"`
+	CreatorID    string   `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	GroupCode    string   `json:"group_code" xml:"group_code" form:"group_code"`
+	ItemCount    int      `json:"item_count" xml:"item_count" form:"item_count"`
+	Detail       string   `json:"detail" xml:"detail" form:"detail"`
+	Rematch      string   `json:"re_match" xml:"re_match" form:"re_match"`
+	Type         string   `json:"type" xml:"type" form:"type"`
+	IsComplete   bool     `json:"is_complete" xml:"is_complete" form:"is_complete"`
+	CompleteTime string   `json:"complete_time" xml:"complete_time" form:"complete_time"`
+	Addition     string   `json:"addition" xml:"addition" form:"addition"`
+	OperatorIDs  []string `json:"operator_ids" xml:"operator_ids" form:"operator_ids"`
 
-	//Operators []*ApiHTTPPostCreateAccount `json:"operators" xml:"operators" form:"operators"`
-	Points      []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
-	OperatorIDs []string           `json:"operator_ids" xml:"operator_ids" form:"operator_ids"`
+	Items []*ApiHTTPPostItem `json:"items" xml:"items" form:"items"`
+}
+
+type ApiHTTPPostItem struct {
+	ID       string `json:"id" xml:"id" form:"id"`
+	OriginID string `json:"origin_id" xml:"origin_id" form:"origin_id"`
+	TaskID   string `json:"task_id" xml:"task_id" form:"task_id"`
+	SerialNo string `json:"serial_no" xml:"serial_no" form:"serial_no"`
+	Index    int    `json:"index" xml:"index" form:"index"`
+	PalletID int    `json:"pallet_id" xml:"pallet_id" form:"pallet_id"`
+
+	Points []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
 }
 
 type ApiHTTPPostPoint struct {
-	ID       string `json:"id" xml:"id" form:"id"`
-	TaskID   string `json:"task_id" xml:"task_id" form:"task_id"`
-	Index    int32  `json:"index" xml:"index" form:"index"`
-	Type     string `json:"type" xml:"type" form:"type"`
-	PalletID int32  `json:"pallet_id" xml:"pallet_id" form:"pallet_id"`
+	ID        string `json:"id" xml:"id" form:"id"`
+	ItemID    string `json:"item_id" xml:"item_id" form:"item_id"`
+	TaskID    string `json:"task_id" xml:"task_id" form:"task_id"`
+	Type      string `json:"type" xml:"type" form:"type"`
+	MeasureID string `json:"measure_id" xml:"measure_id" form:"measure_id"`
 }
 
 /*

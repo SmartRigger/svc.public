@@ -293,6 +293,8 @@ type ApiHTTPGetTool struct {
 type ApiHTTPGetMeasure struct {
 	ID        string               `json:"id" yaml:"id" xml:"id"`
 	TaskID    string               `json:"task_id" yaml:"task_id" xml:"task_id"`
+	ItemID    string               `json:"item_id" yaml:"item_id" xml:"item_id"`
+	PointID   string               `json:"point_id" yaml:"point_id" xml:"point_id"`
 	Index     string               `json:"index" yaml:"index" xml:"index"`
 	IndexNo   string               `json:"index_no" yaml:"index_no" xml:"index_no"`
 	SerialNo  string               `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
@@ -341,7 +343,7 @@ type ApiHTTPGetTask struct {
 	CreatorID    string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
 	Creator      any       `json:"creator" yaml:"creator" xml:"creator"`
 	GroupCode    string    `json:"group_code" yaml:"group_code" xml:"group_code"`
-	ItemCount    int32     `json:"item_count" yaml:"item_count" xml:"item_count"`
+	ItemCount    int       `json:"item_count" yaml:"item_count" xml:"item_count"`
 	Detail       string    `json:"detail" yaml:"detail" xml:"detail"`
 	ReMatch      string    `json:"re_match" yaml:"re_match" xml:"re_match"`
 	Type         string    `json:"type" yaml:"type" xml:"type"`
@@ -350,15 +352,31 @@ type ApiHTTPGetTask struct {
 	Addition     string    `json:"addition" yaml:"addition" xml:"addition"`
 
 	Operators []*ApiHTTPGetAccountGet `json:"operators" yaml:"operators" xml:"operators"`
-	Points    []*ApiHTTPGetPoint      `json:"points" yaml:"points" xml:"points"`
+	Items     []*ApiHTTPGetItem       `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+}
+
+type ApiHTTPGetItem struct {
+	ID       string `json:"id" yaml:"id" xml:"id"`
+	OriginID string `json:"origin_id" yaml:"origin_id" xml:"origin_id"`
+	TaskID   string `json:"task_id" yaml:"task_id" xml:"task_id"`
+	SerialNo string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
+	Index    int    `json:"index" yaml:"index" xml:"index"`
+	PalletID int    `json:"pallet_id" yaml:"pallet_id" xml:"pallet_id"`
+
+	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }
 
 type ApiHTTPGetPoint struct {
-	ID       string `json:"id" yaml:"id" xml:"id"`
-	TaskID   string `json:"task_id" yaml:"task_id" xml:"task_id"`
-	Index    int    `json:"index" yaml:"index" xml:"index"`
-	Type     string `json:"type" yaml:"type" xml:"type"`
-	PalletID int    `json:"pallet_id" yaml:"pallet_id" xml:"pallet_id"`
+	ID        string `json:"id" yaml:"id" xml:"id"`
+	ItemID    string `json:"item_id" yaml:"item_id" xml:"item_id"`
+	TaskID    string `json:"task_id" yaml:"task_id" xml:"task_id"`
+	Type      string `json:"type" yaml:"type" xml:"type"`
+	MeasureID string `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
+	Measure   any    `json:"measure,omitempty" yaml:"measure,omitempty" xml:"measure,omitempty"`
+}
+
+type ApiHTTPGetStat struct {
+	Total int64 `json:"total" yaml:"total" xml:"total"`
 }
 
 /*
