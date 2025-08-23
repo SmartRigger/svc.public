@@ -13,6 +13,8 @@
 
 package request
 
+import "time"
+
 /* {{{ [svc.api/auth] */
 type ApiHTTPPostAuthLogin struct {
 	Username string `json:"username" xml:"username" form:"username"`
@@ -107,18 +109,18 @@ type ApiHTTPPostTemplateRequest struct {
 }
 
 type ApiHTTPPutToolRequest struct {
-	ID                       string `json:"id"`
-	Name                     string `json:"name"`
-	Category                 string `json:"category"`
-	Range                    string `json:"range"`
-	InspectionDate           string `json:"inspection_date"`
-	InspectionPersonnel      string `json:"inspection_personnel"`
-	DailyStartupVerification bool   `json:"daily_startup_verification"`
-	SelfMutualInspection     bool   `json:"self_mutual_inspection"`
-	MeasurementUnit          string `json:"measurement_unit"`
-	ExpireDate               string `json:"expire_date"`
-	Detail                   string `json:"detail"`
-	OwnerID                  string `json:"owner_id"`
+	ID                       string    `json:"id"`
+	Name                     string    `json:"name"`
+	Category                 string    `json:"category"`
+	Range                    string    `json:"range"`
+	InspectionDate           string    `json:"inspection_date"`
+	InspectionPersonnel      string    `json:"inspection_personnel"`
+	DailyStartupVerification time.Time `json:"daily_startup_verification"`
+	SelfMutualInspection     bool      `json:"self_mutual_inspection"`
+	MeasurementUnit          string    `json:"measurement_unit"`
+	ExpireDate               string    `json:"expire_date"`
+	Detail                   string    `json:"detail"`
+	OwnerID                  string    `json:"owner_id"`
 }
 
 type ApiHTTPPostToolRequest struct {
@@ -255,6 +257,15 @@ type ApiHTTPPostTechnology struct {
 	MatchRelation string `json:"match_relation" xml:"match_relation"`
 }
 
+type ApiHTTPGenerateTask struct {
+	TechnologyID string `json:"technology_id" xml:"technology_id" form:"technology_id"`
+	CreatorID    string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	GroupCode    string `json:"group_code" xml:"group_code" form:"group_code"`
+	Type         string `json:"type" xml:"type" form:"type"`
+	Detail       string `json:"detail" xml:"detail" form:"detail"`
+	Addition     string `json:"addition" xml:"addition" form:"addition"`
+}
+
 type ApiHTTPPostTask struct {
 	ID           string   `json:"id" xml:"id" form:"id"`
 	TechnologyID string   `json:"technology_id" xml:"technology_id" form:"technology_id"`
@@ -278,17 +289,29 @@ type ApiHTTPPostItem struct {
 	TaskID   string `json:"task_id" xml:"task_id" form:"task_id"`
 	SerialNo string `json:"serial_no" xml:"serial_no" form:"serial_no"`
 	Index    int    `json:"index" xml:"index" form:"index"`
-	PalletID int    `json:"pallet_id" xml:"pallet_id" form:"pallet_id"`
+	Pallet   int    `json:"pallet" xml:"pallet" form:"pallet"`
+	Row      int    `json:"row" xml:"row" form:"row"`
+	Column   int    `json:"column" xml:"column" form:"column"`
 
 	Points []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
 }
 
 type ApiHTTPPostPoint struct {
-	ID        string `json:"id" xml:"id" form:"id"`
-	ItemID    string `json:"item_id" xml:"item_id" form:"item_id"`
-	TaskID    string `json:"task_id" xml:"task_id" form:"task_id"`
-	Type      string `json:"type" xml:"type" form:"type"`
-	MeasureID string `json:"measure_id" xml:"measure_id" form:"measure_id"`
+	ID           string `json:"id" xml:"id" form:"id"`
+	ItemID       string `json:"item_id" xml:"item_id" form:"item_id"`
+	TaskID       string `json:"task_id" xml:"task_id" form:"task_id"`
+	Name         string `json:"name" xml:"name" form:"name"`
+	Index        int    `json:"index" xml:"index" form:"index"`
+	MeasureTimes int    `json:"measure_times" xml:"measure_times" form:"measure_times"`
+	MeasureID    string `json:"measure_id" xml:"measure_id" form:"measure_id"`
+}
+
+type ApiHTTPPostVerification struct {
+	ToolID       string   `json:"tool_id" xml:"tool_id" form:"tool_id"`
+	OperatorID   string   `json:"operator_id" xml:"operator_id" form:"operator_id"`
+	Status       int      `json:"status" xml:"status" form:"status"`
+	Values       []string `json:"values" xml:"values" form:"values"`
+	AverageValue string   `json:"average_value" xml:"average_value" form:"average_value"`
 }
 
 /*

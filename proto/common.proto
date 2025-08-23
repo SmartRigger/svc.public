@@ -25,7 +25,7 @@ message Tool {
   string range = 6;
   google.protobuf.Timestamp registration_date = 7;
   google.protobuf.Timestamp created_at = 8;
-  bool daily_startup_verification = 9;
+  google.protobuf.Timestamp daily_startup_verification = 9;
   bool self_mutual_inspection = 10;
   string inspection_personnel = 11;
   string detail = 12;

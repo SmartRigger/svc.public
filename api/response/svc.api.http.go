@@ -258,36 +258,36 @@ type ApiHTTPGetInspection struct {
 }
 
 type ApiHTTPGetToolGet struct {
-	ID                       string `json:"id" yaml:"id" xml:"id"`
-	Name                     string `json:"name" yaml:"name" xml:"name"`
-	Category                 string `json:"category" yaml:"category" xml:"category"`
-	Range                    string `json:"range" yaml:"range" xml:"range"`
-	InspectionDate           string `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
-	InspectionPersonnel      string `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
-	DailyStartupVerification bool   `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
-	SelfMutualInspection     bool   `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
-	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
-	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
-	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
-	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
-	OwnerID                  string `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
+	ID                       string    `json:"id" yaml:"id" xml:"id"`
+	Name                     string    `json:"name" yaml:"name" xml:"name"`
+	Category                 string    `json:"category" yaml:"category" xml:"category"`
+	Range                    string    `json:"range" yaml:"range" xml:"range"`
+	InspectionDate           string    `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
+	InspectionPersonnel      string    `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
+	DailyStartupVerification time.Time `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
+	SelfMutualInspection     bool      `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
+	MeasurementUnit          string    `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
+	RegistrationDate         string    `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
+	Detail                   string    `json:"detail" yaml:"detail" xml:"detail"`
+	ExpireDate               string    `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	OwnerID                  string    `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
 }
 
 type ApiHTTPGetTool struct {
-	ID                       string `json:"id" yaml:"id" xml:"id"`
-	Name                     string `json:"name" yaml:"name" xml:"name"`
-	Category                 string `json:"category" yaml:"category" xml:"category"`
-	Range                    string `json:"range" yaml:"range" xml:"range"`
-	InspectionDate           string `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
-	MeasurementUnit          string `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
-	RegistrationDate         string `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
-	CreatedAt                string `json:"created_at" yaml:"created_at" xml:"created_at"`
-	DailyStartupVerification bool   `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
-	SelfMutualInspection     bool   `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
-	InspectionPersonnel      string `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
-	Detail                   string `json:"detail" yaml:"detail" xml:"detail"`
-	ExpireDate               string `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
-	OwnerID                  string `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
+	ID                       string    `json:"id" yaml:"id" xml:"id"`
+	Name                     string    `json:"name" yaml:"name" xml:"name"`
+	Category                 string    `json:"category" yaml:"category" xml:"category"`
+	Range                    string    `json:"range" yaml:"range" xml:"range"`
+	InspectionDate           string    `json:"inspection_date" yaml:"inspection_date" xml:"inspection_date"`
+	MeasurementUnit          string    `json:"measurement_unit" yaml:"measurement_unit" xml:"measurement_unit"`
+	RegistrationDate         string    `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
+	CreatedAt                string    `json:"created_at" yaml:"created_at" xml:"created_at"`
+	DailyStartupVerification time.Time `json:"daily_startup_verification" yaml:"daily_startup_verification" xml:"daily_startup_verification"`
+	SelfMutualInspection     bool      `json:"self_mutual_inspection" yaml:"self_mutual_inspection" xml:"self_mutual_inspection"`
+	InspectionPersonnel      string    `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
+	Detail                   string    `json:"detail" yaml:"detail" xml:"detail"`
+	ExpireDate               string    `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	OwnerID                  string    `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
 }
 
 type ApiHTTPGetMeasure struct {
@@ -336,6 +336,26 @@ type ApiHTTPGetTechnology struct {
 	//ProductionObjectName string    `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
 }
 
+type ApiHTTPGetTechnologyItem struct {
+	ID             string            `json:"id" yaml:"id" xml:"id"`
+	Name           string            `json:"name" yaml:"name" xml:"name"`
+	Type           string            `json:"type" yaml:"type" xml:"type"`
+	TechnologyID   string            `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
+	TaskID         string            `json:"task_id" yaml:"task_id" xml:"task_id"`
+	Description    string            `json:"description" yaml:"description" xml:"description"`
+	StandardValue  string            `json:"standard_value" yaml:"standard_value" xml:"standard_value"`
+	MaxValue       string            `json:"max_value" yaml:"max_value" xml:"max_value"`
+	MinValue       string            `json:"min_value" yaml:"min_value" xml:"min_value"`
+	EnableScanCode bool              `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
+	ScanCodeRegex  string            `json:"scan_code_regex" yaml:"scan_code_regex" xml:"scan_code_regex"`
+	Total          int               `json:"total" yaml:"total" xml:"total"`
+	PalletCount    int               `json:"pallet_count" yaml:"pallet_count" xml:"pallet_count"`
+	PalletRows     int               `json:"pallet_rows" yaml:"pallet_rows" xml:"pallet_rows"`
+	PalletColumns  int               `json:"pallet_columns" yaml:"pallet_columns" xml:"pallet_columns"`
+	PointCount     int               `json:"point_count" yaml:"point_count" xml:"point_count"`
+	Items          []*ApiHTTPGetItem `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+}
+
 type ApiHTTPGetTask struct {
 	ID           string    `json:"id" yaml:"id" xml:"id"`
 	TechnologyID string    `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
@@ -351,8 +371,8 @@ type ApiHTTPGetTask struct {
 	CompleteTime time.Time `json:"complete_time" yaml:"complete_time" xml:"complete_time"`
 	Addition     string    `json:"addition" yaml:"addition" xml:"addition"`
 
-	Operators []*ApiHTTPGetAccountGet `json:"operators" yaml:"operators" xml:"operators"`
-	Items     []*ApiHTTPGetItem       `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+	Operators []*ApiHTTPGetAccountGet              `json:"operators" yaml:"operators" xml:"operators"`
+	Group     map[string]*ApiHTTPGetTechnologyItem `json:"group" yaml:"group" xml:"group"`
 }
 
 type ApiHTTPGetItem struct {
@@ -361,18 +381,22 @@ type ApiHTTPGetItem struct {
 	TaskID   string `json:"task_id" yaml:"task_id" xml:"task_id"`
 	SerialNo string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
 	Index    int    `json:"index" yaml:"index" xml:"index"`
-	PalletID int    `json:"pallet_id" yaml:"pallet_id" xml:"pallet_id"`
+	Pallet   int    `json:"pallet" yaml:"pallet" xml:"pallet"`
+	Row      int    `json:"row" yaml:"row" xml:"row"`
+	Column   int    `json:"column" yaml:"column" xml:"column"`
 
 	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }
 
 type ApiHTTPGetPoint struct {
-	ID        string `json:"id" yaml:"id" xml:"id"`
-	ItemID    string `json:"item_id" yaml:"item_id" xml:"item_id"`
-	TaskID    string `json:"task_id" yaml:"task_id" xml:"task_id"`
-	Type      string `json:"type" yaml:"type" xml:"type"`
-	MeasureID string `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
-	Measure   any    `json:"measure,omitempty" yaml:"measure,omitempty" xml:"measure,omitempty"`
+	ID           string `json:"id" yaml:"id" xml:"id"`
+	ItemID       string `json:"item_id" yaml:"item_id" xml:"item_id"`
+	TaskID       string `json:"task_id" yaml:"task_id" xml:"task_id"`
+	Name         string `json:"name" yaml:"name" xml:"name"`
+	Index        int    `json:"index" yaml:"index" xml:"index"`
+	MeasureTimes int    `json:"measure_times" yaml:"measure_times" xml:"measure_times"`
+	MeasureID    string `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
+	Measure      any    `json:"measure,omitempty" yaml:"measure,omitempty" xml:"measure,omitempty"`
 }
 
 type ApiHTTPGetStat struct {
