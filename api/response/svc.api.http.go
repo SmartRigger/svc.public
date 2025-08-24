@@ -403,6 +403,16 @@ type ApiHTTPGetStat struct {
 	Total int64 `json:"total" yaml:"total" xml:"total"`
 }
 
+type ApiHTTPGetVerification struct {
+	ID           string    `json:"id" yaml:"id" xml:"id"`
+	ToolID       string    `json:"tool_id" yaml:"tool_id" xml:"tool_id"`
+	OperatorID   string    `json:"operator_id" yaml:"operator_id" xml:"operator_id"`
+	Status       int       `json:"status" yaml:"status" xml:"status"`
+	Values       []string  `json:"values" yaml:"values" xml:"values"`
+	AverageValue string    `json:"average_value" yaml:"average_value" xml:"average_value"`
+	CreatedAt    time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
