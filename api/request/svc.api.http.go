@@ -241,6 +241,9 @@ type ApiHTTPPostDataset struct {
 	MeasureID  string `json:"measure_id" xml:"measure_id" form:"measure_id"`
 	DeviceID   string `json:"device_id" xml:"device_id" form:"device_id"`
 	CreatorID  string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	TaskID     string `json:"task_id" xml:"task_id" form:"task_id"`
+	ItemID     string `json:"item_id" xml:"item_id" form:"item_id"`
+	PointID    string `json:"point_id" xml:"point_id" form:"point_id"`
 	Value      string `json:"value" xml:"value" form:"value"`
 	Detail     string `json:"detail" xml:"detail" form:"detail"`
 	Index      int    `json:"index" xml:"index" form:"index"`
@@ -304,6 +307,7 @@ type ApiHTTPPostPoint struct {
 	Index        int    `json:"index" xml:"index" form:"index"`
 	MeasureTimes int    `json:"measure_times" xml:"measure_times" form:"measure_times"`
 	MeasureID    string `json:"measure_id" xml:"measure_id" form:"measure_id"`
+	Status       int    `json:"status" xml:"status" form:"status"`
 }
 
 type ApiHTTPPostVerification struct {

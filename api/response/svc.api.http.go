@@ -311,6 +311,9 @@ type ApiHTTPGetDataset struct {
 	DeviceID   string    `json:"device_id" yaml:"device_id" xml:"device_id"`
 	CreatorID  string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
 	Creator    any       `json:"creator" yaml:"creator" xml:"creator"`
+	TaskID     string    `json:"task_id" yaml:"task_id" xml:"task_id"`
+	ItemID     string    `json:"item_id" yaml:"item_id" xml:"item_id"`
+	PointID    string    `json:"point_id" yaml:"point_id" xml:"point_id"`
 	Value      string    `json:"value" yaml:"value" xml:"value"`
 	Detail     string    `json:"detail" yaml:"detail" xml:"detail"`
 	Index      int       `json:"index" yaml:"index" xml:"index"`
@@ -397,6 +400,7 @@ type ApiHTTPGetPoint struct {
 	MeasureTimes int    `json:"measure_times" yaml:"measure_times" xml:"measure_times"`
 	MeasureID    string `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
 	Measure      any    `json:"measure,omitempty" yaml:"measure,omitempty" xml:"measure,omitempty"`
+	Status       int    `json:"status" yaml:"status" xml:"status"`
 }
 
 type ApiHTTPGetStat struct {
