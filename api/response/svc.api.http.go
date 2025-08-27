@@ -340,23 +340,26 @@ type ApiHTTPGetTechnology struct {
 }
 
 type ApiHTTPGetTechnologyItem struct {
-	ID             string            `json:"id" yaml:"id" xml:"id"`
-	Name           string            `json:"name" yaml:"name" xml:"name"`
-	Type           string            `json:"type" yaml:"type" xml:"type"`
-	TechnologyID   string            `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
-	TaskID         string            `json:"task_id" yaml:"task_id" xml:"task_id"`
-	Description    string            `json:"description" yaml:"description" xml:"description"`
-	StandardValue  string            `json:"standard_value" yaml:"standard_value" xml:"standard_value"`
-	MaxValue       string            `json:"max_value" yaml:"max_value" xml:"max_value"`
-	MinValue       string            `json:"min_value" yaml:"min_value" xml:"min_value"`
-	EnableScanCode bool              `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
-	ScanCodeRegex  string            `json:"scan_code_regex" yaml:"scan_code_regex" xml:"scan_code_regex"`
-	Total          int               `json:"total" yaml:"total" xml:"total"`
-	PalletCount    int               `json:"pallet_count" yaml:"pallet_count" xml:"pallet_count"`
-	PalletRows     int               `json:"pallet_rows" yaml:"pallet_rows" xml:"pallet_rows"`
-	PalletColumns  int               `json:"pallet_columns" yaml:"pallet_columns" xml:"pallet_columns"`
-	PointCount     int               `json:"point_count" yaml:"point_count" xml:"point_count"`
-	Items          []*ApiHTTPGetItem `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+	ID              string            `json:"id" yaml:"id" xml:"id"`
+	Name            string            `json:"name" yaml:"name" xml:"name"`
+	Type            string            `json:"type" yaml:"type" xml:"type"`
+	TechnologyID    string            `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
+	TaskID          string            `json:"task_id" yaml:"task_id" xml:"task_id"`
+	Description     string            `json:"description" yaml:"description" xml:"description"`
+	StandardValue   string            `json:"standard_value" yaml:"standard_value" xml:"standard_value"`
+	MaxValue        string            `json:"max_value" yaml:"max_value" xml:"max_value"`
+	MinValue        string            `json:"min_value" yaml:"min_value" xml:"min_value"`
+	EnableScanCode  bool              `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
+	ScanCodeRegex   string            `json:"scan_code_regex" yaml:"scan_code_regex" xml:"scan_code_regex"`
+	Total           int               `json:"total" yaml:"total" xml:"total"`
+	PalletCount     int               `json:"pallet_count" yaml:"pallet_count" xml:"pallet_count"`
+	PalletRows      int               `json:"pallet_rows" yaml:"pallet_rows" xml:"pallet_rows"`
+	PalletColumns   int               `json:"pallet_columns" yaml:"pallet_columns" xml:"pallet_columns"`
+	PointCount      int               `json:"point_count" yaml:"point_count" xml:"point_count"`
+	Items           []*ApiHTTPGetItem `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+	IgnoreOverhang  bool              `json:"ignoreOverhang" yaml:"ignoreOverhang" xml:"ignoreOverhang"`
+	MinOverhangSize string            `json:"minOverhangSize" yaml:"minOverhangSize" xml:"minOverhangSize"`
+	MaxOverhangSize string            `json:"maxOverhangSize" yaml:"maxOverhangSize" xml:"maxOverhangSize"`
 }
 
 type ApiHTTPGetTask struct {
