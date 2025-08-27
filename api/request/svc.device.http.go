@@ -22,7 +22,7 @@ type DeviceHTTPPostMeasure struct {
 type AdjustSpanner struct {
 	IP     string `json:"ip" xml:"ip" form:"ip"`
 	Pset   uint8  `json:"pset" xml:"pset" form:"pset"`
-	Torque uint16 `json:"torque" xml:"torque" form:"torque"`
+	Torque uint32 `json:"torque" xml:"torque" form:"torque"`
 }
 
 /*
