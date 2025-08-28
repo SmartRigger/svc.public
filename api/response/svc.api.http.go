@@ -352,6 +352,7 @@ type ApiHTTPGetTechnologyItem struct {
 	EnableScanCode  bool              `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
 	ScanCodeRegex   string            `json:"scan_code_regex" yaml:"scan_code_regex" xml:"scan_code_regex"`
 	Total           int               `json:"total" yaml:"total" xml:"total"`
+	EnablePallet    bool              `json:"enable_pallet" yaml:"enable_pallet" xml:"enable_pallet"`
 	PalletCount     int               `json:"pallet_count" yaml:"pallet_count" xml:"pallet_count"`
 	PalletRows      int               `json:"pallet_rows" yaml:"pallet_rows" xml:"pallet_rows"`
 	PalletColumns   int               `json:"pallet_columns" yaml:"pallet_columns" xml:"pallet_columns"`
@@ -382,14 +383,15 @@ type ApiHTTPGetTask struct {
 }
 
 type ApiHTTPGetItem struct {
-	ID       string `json:"id" yaml:"id" xml:"id"`
-	OriginID string `json:"origin_id" yaml:"origin_id" xml:"origin_id"`
-	TaskID   string `json:"task_id" yaml:"task_id" xml:"task_id"`
-	SerialNo string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
-	Index    int    `json:"index" yaml:"index" xml:"index"`
-	Pallet   int    `json:"pallet" yaml:"pallet" xml:"pallet"`
-	Row      int    `json:"row" yaml:"row" xml:"row"`
-	Column   int    `json:"column" yaml:"column" xml:"column"`
+	ID           string `json:"id" yaml:"id" xml:"id"`
+	OriginID     string `json:"origin_id" yaml:"origin_id" xml:"origin_id"`
+	TaskID       string `json:"task_id" yaml:"task_id" xml:"task_id"`
+	SerialNo     string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
+	Index        int    `json:"index" yaml:"index" xml:"index"`
+	EnablePallet bool   `json:"enable_pallet" yaml:"enable_pallet" xml:"enable_pallet"`
+	Pallet       int    `json:"pallet" yaml:"pallet" xml:"pallet"`
+	Row          int    `json:"row" yaml:"row" xml:"row"`
+	Column       int    `json:"column" yaml:"column" xml:"column"`
 
 	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }
@@ -400,6 +402,7 @@ type ApiHTTPGetPoint struct {
 	TaskID       string `json:"task_id" yaml:"task_id" xml:"task_id"`
 	Name         string `json:"name" yaml:"name" xml:"name"`
 	Index        int    `json:"index" yaml:"index" xml:"index"`
+	SerialNo     string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
 	MeasureTimes int    `json:"measure_times" yaml:"measure_times" xml:"measure_times"`
 	MeasureID    string `json:"measure_id" yaml:"measure_id" xml:"measure_id"`
 	Measure      any    `json:"measure,omitempty" yaml:"measure,omitempty" xml:"measure,omitempty"`
