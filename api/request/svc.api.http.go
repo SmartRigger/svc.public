@@ -251,13 +251,16 @@ type ApiHTTPPostDataset struct {
 }
 
 type ApiHTTPPostTechnology struct {
-	ID            string `json:"id" xml:"id" form:"id"`
-	Number        string `json:"number" xml:"number" form:"number"`
-	Name          string `json:"name" xml:"name" form:"name"`
-	TrainType     string `json:"train_type" xml:"train_type" form:"train_type"`
-	CreatorID     string `json:"creator_id" xml:"creator_id" form:"creator_id"`
-	ItemList      string `json:"item_list" xml:"item_list" form:"item_list"`
-	MatchRelation string `json:"match_relation" xml:"match_relation"`
+	ID              string `json:"id" xml:"id" form:"id"`
+	Number          string `json:"number" xml:"number" form:"number"`
+	Name            string `json:"name" xml:"name" form:"name"`
+	TrainType       string `json:"train_type" xml:"train_type" form:"train_type"`
+	TrainID         string `json:"train_id" xml:"train_id" form:"train_id"`
+	CreatorID       string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	ItemList        string `json:"item_list" xml:"item_list" form:"item_list"`
+	MatchRelation   string `json:"match_relation" xml:"match_relation" form:"match_relation"`
+	SubTaskPerCoach int    `json:"subTaskPerCoach" xml:"subTaskPerCoach" form:"subTaskPerCoach"`
+	Unit            string `json:"unit" xml:"unit" form:"unit"`
 }
 
 type ApiHTTPGenerateTask struct {
@@ -316,6 +319,13 @@ type ApiHTTPPostVerification struct {
 	Status       int      `json:"status" xml:"status" form:"status"`
 	Values       []string `json:"values" xml:"values" form:"values"`
 	AverageValue string   `json:"average_value" xml:"average_value" form:"average_value"`
+}
+
+type ApiHTTPPostTrain struct {
+	Name             string `json:"name" xml:"name" form:"name"`
+	Description      string `json:"description" xml:"description" form:"description"`
+	NumCoach         int    `json:"num_coach" xml:"num_coach" form:"num_coach"`
+	NumBogiePerCoach int    `json:"num_bogiper_coach" xml:"num_bogiper_coach" form:"num_bogiper_coach"`
 }
 
 /*
