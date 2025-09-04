@@ -322,6 +322,7 @@ type ApiHTTPPostVerification struct {
 }
 
 type ApiHTTPPostTrain struct {
+	ID               string `json:"id" xml:"id" form:"id"`
 	Name             string `json:"name" xml:"name" form:"name"`
 	Description      string `json:"description" xml:"description" form:"description"`
 	NumCoach         int    `json:"num_coach" xml:"num_coach" form:"num_coach"`

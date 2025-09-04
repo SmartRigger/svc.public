@@ -357,6 +357,7 @@ type ApiHTTPGetTechnologyItem struct {
 	Type             string            `json:"type" yaml:"type" xml:"type"`
 	TechnologyID     string            `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
 	TaskID           string            `json:"task_id" yaml:"task_id" xml:"task_id"`
+	ToolIDs          []string          `json:"tool_ids" yaml:"tool_ids" xml:"tool_ids"`
 	Description      string            `json:"description" yaml:"description" xml:"description"`
 	StandardValue    string            `json:"standard_value" yaml:"standard_value" xml:"standard_value"`
 	MaxValue         string            `json:"max_value" yaml:"max_value" xml:"max_value"`
@@ -365,6 +366,8 @@ type ApiHTTPGetTechnologyItem struct {
 	ScanCodeRegex    string            `json:"scan_code_regex" yaml:"scan_code_regex" xml:"scan_code_regex"`
 	Total            int               `json:"total" yaml:"total" xml:"total"`
 	EnablePallet     bool              `json:"enable_pallet" yaml:"enable_pallet" xml:"enable_pallet"`
+	EnablePalletCode bool              `json:"enable_pallet_code" yaml:"enable_pallet_code" xml:"enable_pallet_code"`
+	ShowPalletCode   int               `json:"show_pallet_code" yaml:"show_pallet_code" xml:"show_pallet_code"`
 	PalletCount      int               `json:"pallet_count" yaml:"pallet_count" xml:"pallet_count"`
 	PalletRows       int               `json:"pallet_rows" yaml:"pallet_rows" xml:"pallet_rows"`
 	PalletColumns    int               `json:"pallet_columns" yaml:"pallet_columns" xml:"pallet_columns"`
@@ -372,6 +375,7 @@ type ApiHTTPGetTechnologyItem struct {
 	PalletColumnCode string            `json:"pallet_column_code" yaml:"pallet_column_code" xml:"pallet_column_code"`
 	PointCount       int               `json:"point_count" yaml:"point_count" xml:"point_count"`
 	Items            []*ApiHTTPGetItem `json:"items,omitempty" yaml:"items,omitempty" xml:"items,omitempty"`
+	PointType        int               `json:"pointType" yaml:"pointType" xml:"pointType"`
 	IgnoreOverhang   bool              `json:"ignoreOverhang" yaml:"ignoreOverhang" xml:"ignoreOverhang"`
 	MinOverhangSize  string            `json:"minOverhangSize" yaml:"minOverhangSize" xml:"minOverhangSize"`
 	MaxOverhangSize  string            `json:"maxOverhangSize" yaml:"maxOverhangSize" xml:"maxOverhangSize"`
