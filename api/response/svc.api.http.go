@@ -407,6 +407,7 @@ type ApiHTTPGetItem struct {
 	TaskID         string `json:"task_id" yaml:"task_id" xml:"task_id"`
 	SerialNo       string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
 	Index          int    `json:"index" yaml:"index" xml:"index"`
+	GlobalIndex    int    `json:"global_index" yaml:"global_index" xml:"global_index"`
 	EnablePallet   bool   `json:"enable_pallet" yaml:"enable_pallet" xml:"enable_pallet"`
 	EnableScanCode bool   `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
 	Coach          string `json:"coach" yaml:"coach" xml:"coach"`
