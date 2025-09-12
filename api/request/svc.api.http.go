@@ -174,15 +174,22 @@ type ApiHTTPPostEditDetectionTask struct {
 }
 
 type ApiHTTPPostIOTServe struct {
-	Type string `json:"type"`
-	Data struct {
-		OrderNo    string   `json:"orderNo"`
-		SrcCode    string   `json:"srcCode"`
-		ModelName  string   `json:"modelName"`
-		VehicleNo  string   `json:"vehicleNo"`
-		TerminalNo []string `json:"terminalNo"`
-		ProcessNo  string   `json:"processNo"`
-	} `json:"data"`
+	OrderNo     string   `json:"orderNo"`
+	OrderName   string   `json:"orderName"`
+	SrcCode     string   `json:"srcCode"`
+	SrcName     string   `json:"srcName"`
+	OfficeName  string   `json:"officeName"`
+	RepairLevel string   `json:"repairLevel"`
+	ModelName   string   `json:"modelName"`
+	VehicleNo   string   `json:"vehicleNo"`
+	CarriageNo  string   `json:"carriageNo"`
+	TerminalNo  []string `json:"terminalNo"`
+	ProcessNo   string   `json:"processNo"`
+	ProductNo   string   `json:"productNo"`
+	ProductName string   `json:"productName"`
+	DeviceType  string   `json:"deviceType"`
+	SmartId     string   `json:"smartId"`
+	SendTime    string   `json:"sendTime"`
 }
 
 type ApiHTTPPostInspection struct {
