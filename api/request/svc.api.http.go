@@ -192,6 +192,27 @@ type ApiHTTPPostIOTServe struct {
 	SendTime    string   `json:"sendTime"`
 }
 
+type ApiHTTPPostResult struct {
+	OrderNo     string                   `json:"orderNo"`
+	VehicleNo   string                   `json:"vehicleNo"`
+	ProductNo   string                   `json:"productNo"`
+	TerminalNo  string                   `json:"terminalNo"`
+	ProcessNo   string                   `json:"processNo"`
+	DeviceType  string                   `json:"deviceType"`
+	SrcCode     string                   `json:"srcCode"`
+	ExecuteData []*ApiHTTPPostResultData `json:"executeData"`
+}
+
+type ApiHTTPPostResultData struct {
+	StepNo            string `json:"stepNo"`
+	BoltNo            string `json:"boltNo"`
+	ActualTorque      string `json:"actualTorque"`
+	InstructionResult string `json:"instructionResult"`
+	OperateDate       string `json:"operateDate"`
+	TerminalNo        string `json:"terminalNo"`
+	Operator          string `json:"operator"`
+}
+
 type ApiHTTPPostInspection struct {
 	AccountID string `json:"account_id"`
 	ToolID    string `json:"tool_id"`
