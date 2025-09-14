@@ -295,6 +295,9 @@ type ApiHTTPGetMeasure struct {
 	TaskID    string               `json:"task_id" yaml:"task_id" xml:"task_id"`
 	ItemID    string               `json:"item_id" yaml:"item_id" xml:"item_id"`
 	PointID   string               `json:"point_id" yaml:"point_id" xml:"point_id"`
+	PointType int                  `json:"point_type" yaml:"point_type" xml:"point_type"`
+	CreatorID string               `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
+	Creator   any                  `json:"creator" yaml:"creator" xml:"creator"`
 	Index     string               `json:"index" yaml:"index" xml:"index"`
 	IndexNo   string               `json:"index_no" yaml:"index_no" xml:"index_no"`
 	SerialNo  string               `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
@@ -329,6 +332,7 @@ type ApiHTTPGetTechnology struct {
 	Train           any       `json:"train" yaml:"train" xml:"train"`
 	CreatorID       string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
 	Creator         any       `json:"creator" yaml:"creator" xml:"creator"`
+	CountTasks      int       `json:"count_tasks" yaml:"count_tasks" xml:"count_tasks"`
 	ItemList        string    `json:"item_list" yaml:"item_list" xml:"item_list"`
 	MatchRelation   string    `json:"match_relation" yaml:"match_relation" xml:"match_relation"`
 	SubTaskPerCoach int       `json:"subTaskPerCoach" yaml:"subTaskPerCoach" xml:"subTaskPerCoach"`
@@ -407,6 +411,7 @@ type ApiHTTPGetItem struct {
 	TaskID         string `json:"task_id" yaml:"task_id" xml:"task_id"`
 	SerialNo       string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
 	Index          int    `json:"index" yaml:"index" xml:"index"`
+	PointType      int    `json:"point_type" yaml:"point_type" xml:"point_type"`
 	GlobalIndex    int    `json:"global_index" yaml:"global_index" xml:"global_index"`
 	EnablePallet   bool   `json:"enable_pallet" yaml:"enable_pallet" xml:"enable_pallet"`
 	EnableScanCode bool   `json:"enable_scan_code" yaml:"enable_scan_code" xml:"enable_scan_code"`
@@ -425,6 +430,7 @@ type ApiHTTPGetPoint struct {
 	ID           string `json:"id" yaml:"id" xml:"id"`
 	ItemID       string `json:"item_id" yaml:"item_id" xml:"item_id"`
 	TaskID       string `json:"task_id" yaml:"task_id" xml:"task_id"`
+	PointType    int    `json:"point_type" yaml:"point_type" xml:"point_type"`
 	Name         string `json:"name" yaml:"name" xml:"name"`
 	Index        int    `json:"index" yaml:"index" xml:"index"`
 	SerialNo     string `json:"serial_no" yaml:"serial_no" xml:"serial_no"`
@@ -455,6 +461,15 @@ type ApiHTTPGetTrain struct {
 	NumCoach         int       `json:"num_coach" yaml:"num_coach" xml:"num_coach"`
 	NumBogiePerCoach int       `json:"num_bogiper_coach" yaml:"num_bogiper_coach"`
 	CreatedAt        time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetDashboardTasksCount struct {
+	TechnologyID string `json:"technology_id" yaml:"technology_id" xml:"technology_id"`
+	Total        int    `json:"total" yaml:"total" xml:"total"`
+	Ongoing      int    `json:"ongoing" yaml:"ongoing" xml:"ongoing"`
+	Completed    int    `json:"completed" yaml:"completed" xml:"completed"`
+	CurrentMonth int    `json:"current_month" yaml:"current_month" xml:"current_month"`
+	Today        int    `json:"today" yaml:"today" xml:"today"`
 }
 
 /*
