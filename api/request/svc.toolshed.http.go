@@ -52,6 +52,10 @@ type ToolshedHTTPTool struct {
 	VerifierID     string `json:"verifier_id" xml:"verifier_id" form:"verifier_id"`
 	SubmitterID    string `json:"submitter_id" xml:"submitter_id" form:"submitter_id"`
 	WorkshopID     string `json:"workshop_id" xml:"workshop_id" form:"workshop_id"`
+	HolderID       string `json:"holder_id" xml:"holder_id" form:"holder_id"`
+	ExpiryDate     string `json:"expiry_date" xml:"expiry_date" form:"expiry_date"`
+	VerifyDate     string `json:"verify_date" xml:"verify_date" form:"verify_date"`
+	VerifyPeriod   int    `json:"verify_period" xml:"verify_period" form:"verify_period"`
 }
 
 type ToolshedHTTPPostAuthLogin struct {

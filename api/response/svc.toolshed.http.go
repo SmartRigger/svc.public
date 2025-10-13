@@ -13,6 +13,8 @@
 
 package response
 
+import "time"
+
 type ToolshedHTTPEssential struct {
 	ID   string `json:"id" xml:"id" yaml:"id"`
 	Name string `json:"name" xml:"name" yaml:"name"`
@@ -39,32 +41,35 @@ type ToolshedHTTPAccount struct {
 }
 
 type ToolshedHTTPTool struct {
-	ID             string `json:"id" xml:"id" yaml:"id"`
-	Name           string `json:"name" xml:"name" yaml:"name"`
-	Serial         string `json:"serial" xml:"serial" yaml:"serial"`
-	RFIDTag        string `json:"rfid_tag" xml:"rfid_tag" yaml:"rfid_tag"`
-	Model          string `json:"model" xml:"model" yaml:"model"`
-	Accuracy       string `json:"accuracy" xml:"accuracy" yaml:"accuracy"`
-	Range          string `json:"range" xml:"range" yaml:"range"`
-	Position       string `json:"position" xml:"position" yaml:"position"`
-	Description    string `json:"description" xml:"description" yaml:"description"`
-	Image          string `json:"image" xml:"image" yaml:"image"`
-	CategoryID     string `json:"category_id" xml:"category_id" yaml:"category_id"`
-	Category       any    `json:"category,omitempty" xml:"category,omitempty" yaml:"category,omitempty"`
-	ManufacturerID string `json:"manufacturer_id" xml:"manufacturer_id" yaml:"manufactureer_id"`
-	Manufacturer   any    `json:"manufacturer,omitempty" xml:"manufacturer,omitempty" yaml:"manufacturer,omitempty"`
-	PlaceID        string `json:"place_id" xml:"place_id" yaml:"place_id"`
-	Place          any    `json:"place,omitempty" xml:"place,omitempty" yaml:"place,omitempty"`
-	VerifierID     string `json:"verifier_id" xml:"verifier_id" yaml:"verifier_id"`
-	Verifier       any    `json:"verifier,omitempty" xml:"verifier,omitempty" yaml:"verifier,omitempty"`
-	SubmitterID    string `json:"submitter_id" xml:"submitter_id" yaml:"submitter_id"`
-	Submitter      any    `json:"submitter,omitempty" xml:"submitter,omitempty" yaml:"submitter,omitempty"`
-	WorkshopID     string `json:"workshop_id" xml:"workshop_id" yaml:"workshop_id"`
-	Workshop       any    `json:"workshop,omitempty" xml:"workshop,omitempty" yaml:"workshop,omitempty"`
-	HolderID       string `json:"holder_id" xml:"holder_id" yaml:"holder_id"`
-	Holder         any    `json:"holder,omitempty" xml:"holder,omitempty" yaml:"holder,omitempty"`
-	Status         int    `json:"status" xml:"status" yaml:"status"`
-	ReleasedAt     string `json:"released_at" xml:"released_at" yaml:"released_at"`
+	ID             string    `json:"id" xml:"id" yaml:"id"`
+	Name           string    `json:"name" xml:"name" yaml:"name"`
+	Serial         string    `json:"serial" xml:"serial" yaml:"serial"`
+	RFIDTag        string    `json:"rfid_tag" xml:"rfid_tag" yaml:"rfid_tag"`
+	Model          string    `json:"model" xml:"model" yaml:"model"`
+	Accuracy       string    `json:"accuracy" xml:"accuracy" yaml:"accuracy"`
+	Range          string    `json:"range" xml:"range" yaml:"range"`
+	Position       string    `json:"position" xml:"position" yaml:"position"`
+	Description    string    `json:"description" xml:"description" yaml:"description"`
+	Image          string    `json:"image" xml:"image" yaml:"image"`
+	CategoryID     string    `json:"category_id" xml:"category_id" yaml:"category_id"`
+	Category       any       `json:"category,omitempty" xml:"category,omitempty" yaml:"category,omitempty"`
+	ManufacturerID string    `json:"manufacturer_id" xml:"manufacturer_id" yaml:"manufactureer_id"`
+	Manufacturer   any       `json:"manufacturer,omitempty" xml:"manufacturer,omitempty" yaml:"manufacturer,omitempty"`
+	PlaceID        string    `json:"place_id" xml:"place_id" yaml:"place_id"`
+	Place          any       `json:"place,omitempty" xml:"place,omitempty" yaml:"place,omitempty"`
+	VerifierID     string    `json:"verifier_id" xml:"verifier_id" yaml:"verifier_id"`
+	Verifier       any       `json:"verifier,omitempty" xml:"verifier,omitempty" yaml:"verifier,omitempty"`
+	SubmitterID    string    `json:"submitter_id" xml:"submitter_id" yaml:"submitter_id"`
+	Submitter      any       `json:"submitter,omitempty" xml:"submitter,omitempty" yaml:"submitter,omitempty"`
+	WorkshopID     string    `json:"workshop_id" xml:"workshop_id" yaml:"workshop_id"`
+	Workshop       any       `json:"workshop,omitempty" xml:"workshop,omitempty" yaml:"workshop,omitempty"`
+	HolderID       string    `json:"holder_id" xml:"holder_id" yaml:"holder_id"`
+	Holder         any       `json:"holder,omitempty" xml:"holder,omitempty" yaml:"holder,omitempty"`
+	Status         int       `json:"status" xml:"status" yaml:"status"`
+	ReleasedAt     string    `json:"released_at" xml:"released_at" yaml:"released_at"`
+	ExpiryDate     time.Time `json:"expiry_date" xml:"expiry_date" yaml:"expiry_date"`
+	VerifyDate     time.Time `json:"verify_date" xml:"verify_date" yaml:"verify_date"`
+	VerifyPeriod   int       `json:"verify_period" xml:"verify_period" yaml:"verify_period"`
 }
 
 type ToolshedHTTPStatisticsSummary struct {
