@@ -383,6 +383,7 @@ type ApiHTTPGetTechnologyItem struct {
 	IgnoreOverhang   bool              `json:"ignoreOverhang" yaml:"ignoreOverhang" xml:"ignoreOverhang"`
 	MinOverhangSize  string            `json:"minOverhangSize" yaml:"minOverhangSize" xml:"minOverhangSize"`
 	MaxOverhangSize  string            `json:"maxOverhangSize" yaml:"maxOverhangSize" xml:"maxOverhangSize"`
+	RelationItemID   string            `json:"relation_item_id" yaml:"relation_item_id" xml:"relation_item_id"`
 }
 
 type ApiHTTPGetTask struct {
@@ -422,6 +423,7 @@ type ApiHTTPGetItem struct {
 	RowCode        string `json:"row_code" yaml:"row_code" xml:"row_code"`
 	Column         int    `json:"column" yaml:"column" xml:"column"`
 	ColumnCode     string `json:"column_code" yaml:"column_code" xml:"column_code"`
+	RelationItemID string `json:"relation_item_id" yaml:"relation_item_id" xml:"relation_item_id"`
 
 	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }
