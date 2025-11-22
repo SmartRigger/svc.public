@@ -397,9 +397,11 @@ type ApiHTTPGetTask struct {
 	Detail       string    `json:"detail" yaml:"detail" xml:"detail"`
 	ReMatch      string    `json:"re_match" yaml:"re_match" xml:"re_match"`
 	Type         string    `json:"type" yaml:"type" xml:"type"`
+	TrainNumber  string    `json:"train_number" yaml:"train_number" xml:"train_number"`
 	IsComplete   bool      `json:"is_complete" yaml:"is_complete" xml:"is_complete"`
 	CompleteTime time.Time `json:"complete_time" yaml:"complete_time" xml:"complete_time"`
 	Addition     string    `json:"addition" yaml:"addition" xml:"addition"`
+	CreatedAt    time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
 
 	Operators []*ApiHTTPGetAccountGet       `json:"operators" yaml:"operators" xml:"operators"`
 	Sub       map[string]*ApiHTTPGetSubTask `json:"sub" yaml:"sub" xml:"sub"`

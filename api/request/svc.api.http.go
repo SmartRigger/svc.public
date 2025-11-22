@@ -296,6 +296,7 @@ type ApiHTTPGenerateTask struct {
 	CreatorID    string `json:"creator_id" xml:"creator_id" form:"creator_id"`
 	GroupCode    string `json:"group_code" xml:"group_code" form:"group_code"`
 	Type         string `json:"type" xml:"type" form:"type"`
+	TrainNumber  string `json:"train_number" xml:"train_number" form:"train_number"`
 	Detail       string `json:"detail" xml:"detail" form:"detail"`
 	Addition     string `json:"addition" xml:"addition" form:"addition"`
 }
@@ -309,6 +310,7 @@ type ApiHTTPPostTask struct {
 	Detail       string   `json:"detail" xml:"detail" form:"detail"`
 	Rematch      string   `json:"re_match" xml:"re_match" form:"re_match"`
 	Type         string   `json:"type" xml:"type" form:"type"`
+	TrainNumber  string   `json:"train_number" xml:"train_number" form:"train_number"`
 	IsComplete   bool     `json:"is_complete" xml:"is_complete" form:"is_complete"`
 	CompleteTime string   `json:"complete_time" xml:"complete_time" form:"complete_time"`
 	Addition     string   `json:"addition" xml:"addition" form:"addition"`
