@@ -30,6 +30,8 @@ type ApiHTTPGetAccountGet struct {
 	ID               string `json:"id" yaml:"id" xml:"id"`
 	GroupID          string `json:"group_id" yaml:"group_id" xml:"group_id"`
 	GroupName        string `json:"group_name" yaml:"group_name" xml:"group_name"`
+	TeamID           string `json:"team_id" yaml:"team_id" xml:"team_id"`
+	TeamName         string `json:"team_name" yaml:"team_name" xml:"team_name"`
 	RealName         string `json:"real_name" yaml:"real_name" xml:"real_name"`
 	GroupPermissions int64  `json:"group_permissions" yaml:"group_permissions" xml:"group_permissions"`
 	Username         string `json:"username" yaml:"username" xml:"username"`
@@ -54,6 +56,8 @@ type ApiHTTPGetAccount struct {
 	DisplayID string `json:"display_id" yaml:"display_id" xml:"display_id"`
 	GroupID   string `json:"group_id" yaml:"group_id" xml:"group_id"`
 	GroupName string `json:"group_name" yaml:"group_name" xml:"group_name"`
+	TeamID    string `json:"team_id" yaml:"team_id" xml:"team_id"`
+	TeamName  string `json:"team_name" yaml:"team_name" xml:"team_name"`
 	Status    int    `json:"status" yaml:"status" xml:"status"`
 	CreatedAt string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
@@ -474,6 +478,12 @@ type ApiHTTPGetDashboardTasksCount struct {
 	Completed    int    `json:"completed" yaml:"completed" xml:"completed"`
 	CurrentMonth int    `json:"current_month" yaml:"current_month" xml:"current_month"`
 	Today        int    `json:"today" yaml:"today" xml:"today"`
+}
+
+type ApiHTTPGetTeam struct {
+	ID        string    `json:"id" yaml:"id" xml:"id"`
+	Name      string    `json:"name" yaml:"name" xml:"name"`
+	CreatedAt time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
 /*

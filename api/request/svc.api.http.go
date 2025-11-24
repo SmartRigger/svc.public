@@ -25,6 +25,7 @@ type ApiHTTPPostEditAccount struct {
 	ID        string `json:"id" xml:"id" form:"id"`
 	Name      string `json:"name" xml:"name" form:"name"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id"`
+	TeamID    string `json:"team_id" xml:"team_id" form:"team_id"`
 	Status    *int   `json:"status" xml:"status" form:"status"`
 	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
 	DisplayID string `json:"display_id" xml:"display_id" form:"display_id"`
@@ -33,6 +34,7 @@ type ApiHTTPPostEditAccount struct {
 type ApiHTTPPostCreateAccount struct {
 	Username  string `json:"username" xml:"username" form:"username" binding:"required"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id" binding:"required"`
+	TeamID    string `json:"team_id" xml:"team_id" form:"team_id" binding:"required"`
 	Password  string `json:"password" xml:"password" form:"password"`
 	Status    int    `json:"status" xml:"status" form:"status"`
 	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
@@ -357,6 +359,11 @@ type ApiHTTPPostTrain struct {
 	Description      string `json:"description" xml:"description" form:"description"`
 	NumCoach         int    `json:"num_coach" xml:"num_coach" form:"num_coach"`
 	NumBogiePerCoach int    `json:"num_bogiper_coach" xml:"num_bogiper_coach" form:"num_bogiper_coach"`
+}
+
+type ApiHTTPPostTeam struct {
+	ID   string `json:"id" xml:"id" form:"id"`
+	Name string `json:"name" xml:"name" form:"name"`
 }
 
 /*
