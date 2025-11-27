@@ -101,6 +101,16 @@ type ToolshedHTTPStatisticsVerify struct {
 	Fail  int64 `json:"fail" xml:"fail" yaml:"fail"`
 }
 
+type ToolshedHTTPStatisticsUsageItem struct {
+	ToolID   string `json:"tool_id" xml:"tool_id" yaml:"tool_id"`
+	ToolName string `json:"tool_name" xml:"tool_name" yaml:"tool_name"`
+	Count    int64  `json:"count" xml:"count" yaml:"count"`
+}
+
+type ToolshedHTTPStatisticsUsage struct {
+	Tools []ToolshedHTTPStatisticsUsageItem `json:"items" xml:"items" yaml:"items"`
+}
+
 type ToolshedHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
