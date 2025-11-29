@@ -111,6 +111,11 @@ type ToolshedHTTPStatisticsUsage struct {
 	Tools []ToolshedHTTPStatisticsUsageItem `json:"items" xml:"items" yaml:"items"`
 }
 
+type ToolshedHTTPStatisticsBase struct {
+	Key   string `json:"key" xml:"key" yaml:"key"`
+	Count int64  `json:"count" xml:"count" yaml:"count"`
+}
+
 type ToolshedHTTPPostAuthLogin struct {
 	ID       string `json:"id" yaml:"id" xml:"id"`
 	Username string `json:"username" yaml:"username" xml:"username"`
