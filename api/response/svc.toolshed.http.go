@@ -138,13 +138,14 @@ type ToolshedHTTPPostRevert struct {
 }
 
 type ToolshedHTTPActivity struct {
-	ID        string `json:"id" xml:"id" yaml:"id"`
-	ToolID    string `json:"tool_id" xml:"tool_id" yaml:"tool_id"`
-	Tool      any    `json:"tool,omitempty" xml:"tool,omitempty" yaml:"tool,omitempty"`
-	StaffID   string `json:"staff_id" xml:"staff_id" yaml:"staff_id"`
-	Staff     any    `json:"staff,omitempty" xml:"staff,omitempty" yaml:"staff,omitempty"`
-	Action    string `json:"action" xml:"action" yaml:"action"`
-	CreatedAt string `json:"created_at" xml:"created_at" yaml:"created_at"`
+	ID        string         `json:"id" xml:"id" yaml:"id"`
+	ToolID    string         `json:"tool_id" xml:"tool_id" yaml:"tool_id"`
+	Tool      any            `json:"tool,omitempty" xml:"tool,omitempty" yaml:"tool,omitempty"`
+	StaffID   string         `json:"staff_id" xml:"staff_id" yaml:"staff_id"`
+	Staff     any            `json:"staff,omitempty" xml:"staff,omitempty" yaml:"staff,omitempty"`
+	Action    string         `json:"action" xml:"action" yaml:"action"`
+	Detail    map[string]any `json:"detail,omitempty" xml:"detail,omitempty" yaml:"detail,omitempty"`
+	CreatedAt string         `json:"created_at" xml:"created_at" yaml:"created_at"`
 }
 
 type ToolshedHTTPItemCount struct {

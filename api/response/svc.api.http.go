@@ -274,6 +274,7 @@ type ApiHTTPGetToolGet struct {
 	RegistrationDate         string    `json:"registration_date" yaml:"registration_date" xml:"registration_date"`
 	Detail                   string    `json:"detail" yaml:"detail" xml:"detail"`
 	ExpireDate               string    `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	Exipred                  bool      `json:"exipred" yaml:"exipred" xml:"exipred"`
 	OwnerID                  string    `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
 }
 
@@ -291,6 +292,7 @@ type ApiHTTPGetTool struct {
 	InspectionPersonnel      string    `json:"inspection_personnel" yaml:"inspection_personnel" xml:"inspection_personnel"`
 	Detail                   string    `json:"detail" yaml:"detail" xml:"detail"`
 	ExpireDate               string    `json:"expire_date" yaml:"expire_date" xml:"expire_date"`
+	Expired                  bool      `json:"expired" yaml:"expired" xml:"expired"`
 	OwnerID                  string    `json:"owner_id" yaml:"owner_id" xml:"owner_id"`
 }
 
@@ -388,6 +390,7 @@ type ApiHTTPGetTechnologyItem struct {
 	MinOverhangSize  string            `json:"minOverhangSize" yaml:"minOverhangSize" xml:"minOverhangSize"`
 	MaxOverhangSize  string            `json:"maxOverhangSize" yaml:"maxOverhangSize" xml:"maxOverhangSize"`
 	RelationItemID   string            `json:"relation_item_id" yaml:"relation_item_id" xml:"relation_item_id"`
+	NextByType       string            `json:"next_by_type" yaml:"next_by_type" xml:"next_by_type"`
 }
 
 type ApiHTTPGetTask struct {
@@ -410,6 +413,7 @@ type ApiHTTPGetTask struct {
 	Operators []*ApiHTTPGetAccountGet       `json:"operators" yaml:"operators" xml:"operators"`
 	Sub       map[string]*ApiHTTPGetSubTask `json:"sub" yaml:"sub" xml:"sub"`
 	//Group     map[string]*ApiHTTPGetTechnologyItem            `json:"group" yaml:"group" xml:"group"`
+	NextByType string `json:"next_by_type" yaml:"next_by_type" xml:"next_by_type"`
 }
 
 type ApiHTTPGetItem struct {
@@ -430,6 +434,7 @@ type ApiHTTPGetItem struct {
 	Column         int    `json:"column" yaml:"column" xml:"column"`
 	ColumnCode     string `json:"column_code" yaml:"column_code" xml:"column_code"`
 	RelationItemID string `json:"relation_item_id" yaml:"relation_item_id" xml:"relation_item_id"`
+	NextByType     string `json:"next_by_type" yaml:"next_by_type" xml:"next_by_type"`
 
 	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }

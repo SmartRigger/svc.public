@@ -322,16 +322,16 @@ type ApiHTTPPostTask struct {
 }
 
 type ApiHTTPPostItem struct {
-	ID       string `json:"id" xml:"id" form:"id"`
-	OriginID string `json:"origin_id" xml:"origin_id" form:"origin_id"`
-	TaskID   string `json:"task_id" xml:"task_id" form:"task_id"`
-	SerialNo string `json:"serial_no" xml:"serial_no" form:"serial_no"`
-	Index    int    `json:"index" xml:"index" form:"index"`
-	Pallet   int    `json:"pallet" xml:"pallet" form:"pallet"`
-	Row      int    `json:"row" xml:"row" form:"row"`
-	Column   int    `json:"column" xml:"column" form:"column"`
-
-	Points []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
+	ID         string             `json:"id" xml:"id" form:"id"`
+	OriginID   string             `json:"origin_id" xml:"origin_id" form:"origin_id"`
+	TaskID     string             `json:"task_id" xml:"task_id" form:"task_id"`
+	SerialNo   string             `json:"serial_no" xml:"serial_no" form:"serial_no"`
+	Index      int                `json:"index" xml:"index" form:"index"`
+	Pallet     int                `json:"pallet" xml:"pallet" form:"pallet"`
+	Row        int                `json:"row" xml:"row" form:"row"`
+	Column     int                `json:"column" xml:"column" form:"column"`
+	Points     []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
+	NextByType string             `json:"next_by_type" xml:"next_by_type" form:"next_by_type"`
 }
 
 type ApiHTTPPostPoint struct {
