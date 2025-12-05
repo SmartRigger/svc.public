@@ -70,6 +70,7 @@ type ToolshedHTTPTool struct {
 	ExpiryDate     time.Time `json:"expiry_date" xml:"expiry_date" yaml:"expiry_date"`
 	VerifyDate     time.Time `json:"verify_date" xml:"verify_date" yaml:"verify_date"`
 	VerifyPeriod   int       `json:"verify_period" xml:"verify_period" yaml:"verify_period"`
+	VerifyStatus   int       `json:"verify_status" xml:"verify_status" yaml:"verify_status"`
 }
 
 type ToolshedHTTPStatisticsSummary struct {
