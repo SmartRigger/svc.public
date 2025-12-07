@@ -32,6 +32,8 @@ type ApiHTTPGetAccountGet struct {
 	GroupName        string `json:"group_name" yaml:"group_name" xml:"group_name"`
 	TeamID           string `json:"team_id" yaml:"team_id" xml:"team_id"`
 	TeamName         string `json:"team_name" yaml:"team_name" xml:"team_name"`
+	AreaID           string `json:"area_id" yaml:"area_id" xml:"area_id"`
+	AreaName         string `json:"area_name" yaml:"area_name" xml:"area_name"`
 	RealName         string `json:"real_name" yaml:"real_name" xml:"real_name"`
 	GroupPermissions int64  `json:"group_permissions" yaml:"group_permissions" xml:"group_permissions"`
 	Username         string `json:"username" yaml:"username" xml:"username"`
@@ -58,6 +60,8 @@ type ApiHTTPGetAccount struct {
 	GroupName string `json:"group_name" yaml:"group_name" xml:"group_name"`
 	TeamID    string `json:"team_id" yaml:"team_id" xml:"team_id"`
 	TeamName  string `json:"team_name" yaml:"team_name" xml:"team_name"`
+	AreaID    string `json:"area_id" yaml:"area_id" xml:"area_id"`
+	AreaName  string `json:"area_name" yaml:"area_name" xml:"area_name"`
 	Status    int    `json:"status" yaml:"status" xml:"status"`
 	CreatedAt string `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
@@ -209,15 +213,13 @@ type ApiHTTPGetToolUsage struct {
 }
 
 type ApiHTTPGetDetectionTaskGet struct {
-	ID           string `json:"id"`
-	TemplateID   string `json:"template_id"`
-	TemplateName string `json:"template_name"`
-	Template     any    `json:"template"`
-	CreatorID    string `json:"creator_id"`
-	CreatorName  string `json:"creator_name"`
-	Creator      any    `json:"creator"`
-	//OperatorID   []string                `json:"operator_id"`
-	//OperatorName []string                `json:"operator_name"`
+	ID           string                  `json:"id"`
+	TemplateID   string                  `json:"template_id"`
+	TemplateName string                  `json:"template_name"`
+	Template     any                     `json:"template"`
+	CreatorID    string                  `json:"creator_id"`
+	CreatorName  string                  `json:"creator_name"`
+	Creator      any                     `json:"creator"`
 	Operators    []*ApiHTTPGetAccountGet `json:"operators"`
 	TaskDetail   string                  `json:"task_detail"`
 	ReMatch      string                  `json:"re_match"`
@@ -232,15 +234,13 @@ type ApiHTTPGetDetectionTaskGet struct {
 }
 
 type ApiHTTPGetDetectionTask struct {
-	ID           string `json:"id"`
-	TemplateID   string `json:"template_id"`
-	TemplateName string `json:"template_name"`
-	Template     any    `json:"template"`
-	CreatorID    string `json:"creator_id"`
-	CreatorName  string `json:"creator_name"`
-	Creator      any    `json:"creator"`
-	//OperatorID   []string `json:"operator_id"`
-	//OperatorName []string `json:"operator_name"`
+	ID           string                  `json:"id"`
+	TemplateID   string                  `json:"template_id"`
+	TemplateName string                  `json:"template_name"`
+	Template     any                     `json:"template"`
+	CreatorID    string                  `json:"creator_id"`
+	CreatorName  string                  `json:"creator_name"`
+	Creator      any                     `json:"creator"`
 	Operators    []*ApiHTTPGetAccountGet `json:"operators"`
 	TaskDetail   string                  `json:"task_detail"`
 	ReMatch      string                  `json:"re_match"`
@@ -338,6 +338,8 @@ type ApiHTTPGetTechnology struct {
 	Train           any       `json:"train" yaml:"train" xml:"train"`
 	CreatorID       string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
 	Creator         any       `json:"creator" yaml:"creator" xml:"creator"`
+	AreaID          string    `json:"area_id" yaml:"area_id" xml:"area_id"`
+	Area            any       `json:"area" yaml:"area" xml:"area"`
 	CountTasks      int       `json:"count_tasks" yaml:"count_tasks" xml:"count_tasks"`
 	ItemList        string    `json:"item_list" yaml:"item_list" xml:"item_list"`
 	MatchRelation   string    `json:"match_relation" yaml:"match_relation" xml:"match_relation"`
@@ -399,6 +401,8 @@ type ApiHTTPGetTask struct {
 	Technology   any       `json:"technology" yaml:"technology" xml:"technology"`
 	CreatorID    string    `json:"creator_id" yaml:"creator_id" xml:"creator_id"`
 	Creator      any       `json:"creator" yaml:"creator" xml:"creator"`
+	AreaID       string    `json:"area_id" yaml:"area_id" xml:"area_id"`
+	Area         any       `json:"area" yaml:"area" xml:"area"`
 	GroupCode    string    `json:"group_code" yaml:"group_code" xml:"group_code"`
 	ItemCount    int       `json:"item_count" yaml:"item_count" xml:"item_count"`
 	Detail       string    `json:"detail" yaml:"detail" xml:"detail"`
@@ -489,6 +493,13 @@ type ApiHTTPGetTeam struct {
 	ID        string    `json:"id" yaml:"id" xml:"id"`
 	Name      string    `json:"name" yaml:"name" xml:"name"`
 	CreatedAt time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
+}
+
+type ApiHTTPGetArea struct {
+	ID          string    `json:"id" yaml:"id" xml:"id"`
+	Name        string    `json:"name" yaml:"name" xml:"name"`
+	Description string    `json:"description" yaml:"description" xml:"description"`
+	CreatedAt   time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
 }
 
 /*

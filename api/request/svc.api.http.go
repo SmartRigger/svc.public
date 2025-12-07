@@ -26,6 +26,7 @@ type ApiHTTPPostEditAccount struct {
 	Name      string `json:"name" xml:"name" form:"name"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id"`
 	TeamID    string `json:"team_id" xml:"team_id" form:"team_id"`
+	AreaID    string `json:"area_id" xml:"area_id" form:"area_id"`
 	Status    *int   `json:"status" xml:"status" form:"status"`
 	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
 	DisplayID string `json:"display_id" xml:"display_id" form:"display_id"`
@@ -35,6 +36,7 @@ type ApiHTTPPostCreateAccount struct {
 	Username  string `json:"username" xml:"username" form:"username" binding:"required"`
 	GroupID   string `json:"group_id" xml:"group_id" form:"group_id" binding:"required"`
 	TeamID    string `json:"team_id" xml:"team_id" form:"team_id" binding:"required"`
+	AreaID    string `json:"area_id" xml:"area_id" form:"area_id" binding:"required"`
 	Password  string `json:"password" xml:"password" form:"password"`
 	Status    int    `json:"status" xml:"status" form:"status"`
 	RealName  string `json:"real_name" xml:"real_name" form:"real_name"`
@@ -287,6 +289,7 @@ type ApiHTTPPostTechnology struct {
 	TrainType       string `json:"train_type" xml:"train_type" form:"train_type"`
 	TrainID         string `json:"train_id" xml:"train_id" form:"train_id"`
 	CreatorID       string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	AreaID          string `json:"area_id" xml:"area_id" form:"area_id"`
 	ItemList        string `json:"item_list" xml:"item_list" form:"item_list"`
 	MatchRelation   string `json:"match_relation" xml:"match_relation" form:"match_relation"`
 	SubTaskPerCoach int    `json:"subTaskPerCoach" xml:"subTaskPerCoach" form:"subTaskPerCoach"`
@@ -296,6 +299,7 @@ type ApiHTTPPostTechnology struct {
 type ApiHTTPGenerateTask struct {
 	TechnologyID string `json:"technology_id" xml:"technology_id" form:"technology_id"`
 	CreatorID    string `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	AreaID       string `json:"area_id" xml:"area_id" form:"area_id"`
 	GroupCode    string `json:"group_code" xml:"group_code" form:"group_code"`
 	Type         string `json:"type" xml:"type" form:"type"`
 	TrainNumber  string `json:"train_number" xml:"train_number" form:"train_number"`
@@ -307,6 +311,7 @@ type ApiHTTPPostTask struct {
 	ID           string   `json:"id" xml:"id" form:"id"`
 	TechnologyID string   `json:"technology_id" xml:"technology_id" form:"technology_id"`
 	CreatorID    string   `json:"creator_id" xml:"creator_id" form:"creator_id"`
+	AreaID       string   `json:"area_id" xml:"area_id" form:"area_id"`
 	GroupCode    string   `json:"group_code" xml:"group_code" form:"group_code"`
 	ItemCount    int      `json:"item_count" xml:"item_count" form:"item_count"`
 	Detail       string   `json:"detail" xml:"detail" form:"detail"`
@@ -364,6 +369,12 @@ type ApiHTTPPostTrain struct {
 type ApiHTTPPostTeam struct {
 	ID   string `json:"id" xml:"id" form:"id"`
 	Name string `json:"name" xml:"name" form:"name"`
+}
+
+type ApiHTTPPostArea struct {
+	ID          string `json:"id" xml:"id" form:"id"`
+	Name        string `json:"name" xml:"name" form:"name"`
+	Description string `json:"description" xml:"description" form:"description"`
 }
 
 /*
