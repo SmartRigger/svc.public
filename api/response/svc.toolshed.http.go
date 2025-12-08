@@ -38,6 +38,8 @@ type ToolshedHTTPAccount struct {
 	ID       string `json:"id" xml:"id" yaml:"id"`
 	Username string `json:"username" xml:"username" yaml:"username"`
 	Name     string `json:"name" xml:"name" yaml:"name"`
+	GroupID  string `json:"group_id" xml:"group_id" yaml:"group_id"`
+	Group    any    `json:"group,omitempty" xml:"group,omitempty" yaml:"group,omitempty"`
 }
 
 type ToolshedHTTPTool struct {
@@ -118,14 +120,12 @@ type ToolshedHTTPStatisticsBase struct {
 }
 
 type ToolshedHTTPPostAuthLogin struct {
-	ID       string `json:"id" yaml:"id" xml:"id"`
-	Username string `json:"username" yaml:"username" xml:"username"`
-	Name     string `json:"name" yaml:"name" xml:"name"`
-	RealName string `json:"real_name" yaml:"real_name" xml:"real_name"`
-	Avatar   string `json:"avatar" yaml:"avatar" xml:"avatar"`
-	Status   int    `json:"status" yaml:"status" xml:"status"`
-	Token    string `json:"token" yaml:"token" xml:"token"`
-	Expired  int64  `json:"expired" yaml:"expired" xml:"expired"`
+	ID        string `json:"id" yaml:"id" xml:"id"`
+	Username  string `json:"username" yaml:"username" xml:"username"`
+	Name      string `json:"name" yaml:"name" xml:"name"`
+	GroupName string `json:"group_name" yaml:"group_name" xml:"group_name"`
+	Token     string `json:"token" yaml:"token" xml:"token"`
+	Expired   int64  `json:"expired" yaml:"expired" xml:"expired"`
 }
 
 type ToolshedHTTPPostBorrow struct {
@@ -140,6 +140,8 @@ type ToolshedHTTPPostRevert struct {
 
 type ToolshedHTTPActivity struct {
 	ID        string         `json:"id" xml:"id" yaml:"id"`
+	AccountID string         `json:"account_id" xml:"account_id" yaml:"account_id"`
+	Account   any            `json:"account,omitempty" xml:"account,omitempty" yaml:"account,omitempty"`
 	ToolID    string         `json:"tool_id" xml:"tool_id" yaml:"tool_id"`
 	Tool      any            `json:"tool,omitempty" xml:"tool,omitempty" yaml:"tool,omitempty"`
 	StaffID   string         `json:"staff_id" xml:"staff_id" yaml:"staff_id"`
@@ -157,6 +159,11 @@ type ToolshedHTTPItemCount struct {
 
 type ToolshedHTTPCategories struct {
 	Categories []*ToolshedHTTPItemCount `json:"categories" xml:"categories" yaml:"categories"`
+}
+
+type ToolshedHTTPGroup struct {
+	ID   string `json:"id" xml:"id" yaml:"id"`
+	Name string `json:"name" xml:"name" yaml:"name"`
 }
 
 /*

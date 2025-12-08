@@ -89,6 +89,10 @@ type ToolshedHTTPPostScan struct {
 	Data string `json:"data" xml:"data" form:"data"`
 }
 
+type ToolshedHTTPPostGroup struct {
+	Name string `json:"name" xml:"name" form:"name"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
