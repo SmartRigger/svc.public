@@ -73,6 +73,8 @@ type ToolshedHTTPTool struct {
 	VerifyDate     *time.Time `json:"verify_date" xml:"verify_date" yaml:"verify_date"`
 	VerifyPeriod   int        `json:"verify_period" xml:"verify_period" yaml:"verify_period"`
 	VerifyStatus   int        `json:"verify_status" xml:"verify_status" yaml:"verify_status"`
+	ActivedAt      time.Time  `json:"actived_at" xml:"actived_at" yaml:"actived_at"`
+	CreatedAt      time.Time  `json:"created_at" xml:"created_at" yaml:"created_at"`
 }
 
 type ToolshedHTTPStatisticsSummary struct {
