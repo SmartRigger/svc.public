@@ -101,9 +101,11 @@ type ToolshedHTTPStatisticsStaff struct {
 }
 
 type ToolshedHTTPStatisticsVerify struct {
-	Total int64 `json:"total" xml:"total" yaml:"total"`
-	Pass  int64 `json:"pass" xml:"pass" yaml:"pass"`
-	Fail  int64 `json:"fail" xml:"fail" yaml:"fail"`
+	Total     int64 `json:"total" xml:"total" yaml:"total"`
+	Awaiting  int64 `json:"awaiting" xml:"awaiting" yaml:"awaiting"`
+	Pass      int64 `json:"pass" xml:"pass" yaml:"pass"`
+	Fail      int64 `json:"fail" xml:"fail" yaml:"fail"`
+	CurrMonth int64 `json:"curr_month" xml:"curr_month" yaml:"curr_month"`
 }
 
 type ToolshedHTTPStatisticsUsageItem struct {
