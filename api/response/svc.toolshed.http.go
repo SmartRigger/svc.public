@@ -90,6 +90,8 @@ type ToolshedHTTPStatisticsTool struct {
 	Available int64 `json:"available" xml:"available" yaml:"available"`
 	Borrowed  int64 `json:"borrowed" xml:"borrowed" yaml:"borrowed"`
 	Overdue   int64 `json:"overdue" xml:"overdue" yaml:"overdue"`
+	AboutTo   int64 `json:"about_to" xml:"about_to" yaml:"about_to"`
+	Awaiting  int64 `json:"awaiting" xml:"awaiting" yaml:"awaiting"`
 }
 
 type ToolshedHTTPStatisticsStaff struct {
