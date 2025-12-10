@@ -465,6 +465,7 @@ type ApiHTTPGetVerification struct {
 	ID           string    `json:"id" yaml:"id" xml:"id"`
 	ToolID       string    `json:"tool_id" yaml:"tool_id" xml:"tool_id"`
 	OperatorID   string    `json:"operator_id" yaml:"operator_id" xml:"operator_id"`
+	Operator     any       `json:"operator" yaml:"operator" xml:"operator"`
 	Status       int       `json:"status" yaml:"status" xml:"status"`
 	Values       []string  `json:"values" yaml:"values" xml:"values"`
 	AverageValue string    `json:"average_value" yaml:"average_value" xml:"average_value"`
