@@ -78,6 +78,7 @@ type ToolshedHTTPPostVerify struct {
 	ToolID          string `json:"tool_id" xml:"tool_id" form:"tool_id"`
 	VerifyDate      string `json:"verify_date" xml:"verify_date" form:"verify_date"`
 	NextVerifyDate  string `json:"next_verify_date" xml:"next_verify_date" form:"next_verify_date"`
+	VerifyPeriod    int    `json:"verify_period" xml:"verify_period" form:"verify_period"`
 	Organization    string `json:"organization" xml:"organization" form:"organization"`
 	CertificationNo string `json:"certificattion_no" xml:"certificattion_no" form:"certificattion_no"`
 	Result          int    `json:"result" xml:"result" form:"result"`
