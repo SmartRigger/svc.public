@@ -103,11 +103,14 @@ type ToolshedHTTPStatisticsStaff struct {
 }
 
 type ToolshedHTTPStatisticsVerify struct {
-	Total     int64 `json:"total" xml:"total" yaml:"total"`
-	Awaiting  int64 `json:"awaiting" xml:"awaiting" yaml:"awaiting"`
-	Pass      int64 `json:"pass" xml:"pass" yaml:"pass"`
-	Fail      int64 `json:"fail" xml:"fail" yaml:"fail"`
-	CurrMonth int64 `json:"curr_month" xml:"curr_month" yaml:"curr_month"`
+	Total      int64 `json:"total" xml:"total" yaml:"total"`
+	Awaiting   int64 `json:"awaiting" xml:"awaiting" yaml:"awaiting"`
+	Pass       int64 `json:"pass" xml:"pass" yaml:"pass"`
+	Fail       int64 `json:"fail" xml:"fail" yaml:"fail"`
+	CurrMonth  int64 `json:"curr_month" xml:"curr_month" yaml:"curr_month"`
+	Overdue    int64 `json:"overdue" xml:"overdue" yaml:"overdue"`
+	Near30Days int64 `json:"near_30_days" xml:"near_30_days" yaml:"near_30_days"`
+	Near90Days int64 `json:"near_90_days" xml:"near_90_days" yaml:"near_90_days"`
 }
 
 type ToolshedHTTPStatisticsUsageItem struct {
