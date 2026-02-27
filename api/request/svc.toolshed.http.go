@@ -85,6 +85,18 @@ type ToolshedHTTPPostVerify struct {
 	Remark          string `json:"remark" xml:"remark" form:"remark"`
 }
 
+type ToolshedHTTPPostInspect struct {
+	StaffID     string `json:"staff_id" xml:"staff_id" form:"staff_id"`
+	ToolID      string `json:"tool_id" xml:"tool_id" form:"tool_id"`
+	InspectDate string `json:"inspect_date" xml:"inspect_date" form:"inspect_date"`
+}
+
+type ToolshedHTTPPostRepair struct {
+	StaffID    string `json:"staff_id" xml:"staff_id" form:"staff_id"`
+	ToolID     string `json:"tool_id" xml:"tool_id" form:"tool_id"`
+	RepairDate string `json:"repair_date" xml:"repair_date" form:"repair_date"`
+}
+
 type ToolshedHTTPPostScan struct {
 	Type string `json:"type" xml:"type" form:"type"`
 	Data string `json:"data" xml:"data" form:"data"`
