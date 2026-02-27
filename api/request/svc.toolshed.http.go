@@ -90,6 +90,10 @@ type ToolshedHTTPPostScan struct {
 	Data string `json:"data" xml:"data" form:"data"`
 }
 
+type ToolshedHTTPDeleteTool struct {
+	IDs []string `json:"ids" xml:"ids" form:"ids"`
+}
+
 type ToolshedHTTPPostGroup struct {
 	Name string `json:"name" xml:"name" form:"name"`
 }
