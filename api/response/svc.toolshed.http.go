@@ -175,6 +175,12 @@ type ToolshedHTTPGroup struct {
 	Name string `json:"name" xml:"name" yaml:"name"`
 }
 
+type ToolshedHTTPSetting struct {
+	Key       string    `json:"key" xml:"key" yaml:"key"`
+	Value     string    `json:"value" xml:"value" yaml:"value"`
+	CreatedAt time.Time `json:"created_at" xml:"created_at" yaml:"created_at"`
+}
+
 /*
  * Local variables:
  * tab-width: 4

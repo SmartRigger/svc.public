@@ -110,6 +110,11 @@ type ToolshedHTTPPostGroup struct {
 	Name string `json:"name" xml:"name" form:"name"`
 }
 
+type ToolshedHTTPPostSetting struct {
+	Key   string `json:"key" xml:"key" form:"key"`
+	Value string `json:"value" xml:"value" form:"value"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
