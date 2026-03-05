@@ -97,6 +97,12 @@ type ToolshedHTTPPostRepair struct {
 	RepairDate string `json:"repair_date" xml:"repair_date" form:"repair_date"`
 }
 
+type ToolshedHTTPPostDone struct {
+	StaffID  string `json:"staff_id" xml:"staff_id" form:"staff_id"`
+	ToolID   string `json:"tool_id" xml:"tool_id" form:"tool_id"`
+	DoneDate string `json:"done_date" xml:"done_date" form:"done_date"`
+}
+
 type ToolshedHTTPPostScan struct {
 	Type string `json:"type" xml:"type" form:"type"`
 	Data string `json:"data" xml:"data" form:"data"`
