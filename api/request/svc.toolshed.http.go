@@ -121,6 +121,8 @@ type ToolshedHTTPPostSetting struct {
 	Value string `json:"value" xml:"value" form:"value"`
 }
 
+type ToolshedHTTPMerge struct{}
+
 /*
  * Local variables:
  * tab-width: 4
