@@ -121,7 +121,34 @@ type ToolshedHTTPPostSetting struct {
 	Value string `json:"value" xml:"value" form:"value"`
 }
 
-type ToolshedHTTPMerge struct{}
+type ToolshedHTTPMergeItem struct {
+	Name           string `json:"name" xml:"name" form:"name"`
+	Serial         string `json:"serial" xml:"serial" form:"serial"`
+	RFIDTag        string `json:"rfid_tag" xml:"rfid_tag" form:"rfid_tag"`
+	Model          string `json:"model" xml:"model" form:"model"`
+	Accuracy       string `json:"accuracy" xml:"accuracy" form:"accuracy"`
+	Range          string `json:"range" xml:"range" form:"range"`
+	Position       string `json:"position" xml:"position" form:"position"`
+	Description    string `json:"description" xml:"description" form:"description"`
+	Image          string `json:"image" xml:"image" form:"image"`
+	CategoryID     string `json:"category_id" xml:"category_id" form:"category_id"`
+	ManufacturerID string `json:"manufacturer_id" xml:"manufacturer_id" form:"manufacturer_id"`
+	PlaceID        string `json:"place_id" xml:"place_id" form:"place_id"`
+	WorkshopID     string `json:"workshop_id" xml:"workshop_id" form:"workshop_id"`
+	VerifierID     string `json:"verifier_id" xml:"verifier_id" form:"verifier_id"`
+	SubmitterID    string `json:"submitter_id" xml:"submitter_id" form:"submitter_id"`
+	HolderID       string `json:"holder_id" xml:"holder_id" form:"holder_id"`
+	Status         int    `json:"status" xml:"status" form:"status"`
+	ReleasedAt     string `json:"released_at" xml:"released_at" form:"released_at"`
+	ExpiryDate     string `json:"expiry_date" xml:"expiry_date" form:"expiry_date"`
+	VerifyDate     string `json:"verify_date" xml:"verify_date" form:"verify_date"`
+	VerifyPeriod   int    `json:"verify_period" xml:"verify_period" form:"verify_period"`
+	VerifyStatus   int    `json:"verify_status" xml:"verify_status" form:"verify_status"`
+}
+
+type ToolshedHTTPMerge struct {
+	Data []ToolshedHTTPMergeItem `json:"data" xml:"data" form:"data"`
+}
 
 /*
  * Local variables:

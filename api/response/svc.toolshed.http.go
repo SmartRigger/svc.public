@@ -181,6 +181,12 @@ type ToolshedHTTPSetting struct {
 	CreatedAt time.Time `json:"created_at" xml:"created_at" yaml:"created_at"`
 }
 
+type ToolshedHTTPMerge struct {
+	Created int `json:"created" xml:"created" yaml:"created"`
+	Updated int `json:"updated" xml:"updated" yaml:"updated"`
+	Deleted int `json:"deleted" xml:"deleted" yaml:"deleted"`
+}
+
 /*
  * Local variables:
  * tab-width: 4
