@@ -144,6 +144,9 @@ type ToolshedHTTPMergeItem struct {
 	VerifyDate     string `json:"verify_date" xml:"verify_date" form:"verify_date"`
 	VerifyPeriod   int    `json:"verify_period" xml:"verify_period" form:"verify_period"`
 	VerifyStatus   int    `json:"verify_status" xml:"verify_status" form:"verify_status"`
+	Verifier       struct {
+		Name string `json:"name" xml:"name" form:"name"`
+	} `json:"verifier" xml:"verifier" form:"verifier"`
 }
 
 type ToolshedHTTPMerge struct {
