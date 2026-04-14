@@ -71,6 +71,8 @@ type ToolshedHTTPTool struct {
 	ReleasedAt     string     `json:"released_at" xml:"released_at" yaml:"released_at"`
 	ExpiryDate     *time.Time `json:"expiry_date" xml:"expiry_date" yaml:"expiry_date"`
 	VerifyDate     *time.Time `json:"verify_date" xml:"verify_date" yaml:"verify_date"`
+	InspectDate    *time.Time `json:"inspect_date" xml:"inspect_date" yaml:"inspect_date"`
+	RepairDate     *time.Time `json:"repair_date" xml:"repair_date" yaml:"repair_date"`
 	VerifyPeriod   int        `json:"verify_period" xml:"verify_period" yaml:"verify_period"`
 	VerifyStatus   int        `json:"verify_status" xml:"verify_status" yaml:"verify_status"`
 	ActivedAt      time.Time  `json:"actived_at" xml:"actived_at" yaml:"actived_at"`
