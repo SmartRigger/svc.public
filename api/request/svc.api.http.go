@@ -148,7 +148,7 @@ type ApiHTTPPostChangePassword struct {
 
 type ApiHTTPPostChangePasswordByID struct {
 	ID string `json:"id" xml:"id" form:"id"`
-	//OldPassword string `json:"old_password"`
+	// OldPassword string `json:"old_password"`
 	NewPassword string `json:"new_password" xml:"new_password"`
 }
 
@@ -337,6 +337,7 @@ type ApiHTTPPostItem struct {
 	Column     int                `json:"column" xml:"column" form:"column"`
 	Points     []ApiHTTPPostPoint `json:"points" xml:"points" form:"points"`
 	NextByType string             `json:"next_by_type" xml:"next_by_type" form:"next_by_type"`
+	Moved      bool               `json:"moved" xml:"moved" form:"moved"`
 }
 
 type ApiHTTPPostPoint struct {

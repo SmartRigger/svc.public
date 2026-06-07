@@ -347,12 +347,12 @@ type ApiHTTPGetTechnology struct {
 	Unit            string    `json:"unit" yaml:"unit" xml:"unit"`
 	CreatedAt       time.Time `json:"created_at" yaml:"created_at" xml:"created_at"`
 
-	//Version              string    `json:"version" yaml:"version" xml:"version"`
-	//Remarks              string    `json:"remarks" yaml:"remarks" xml:"remarks"`
-	//Params               string    `json:"params" yaml:"params" xml:"params"`
-	//Processes            string    `json:"processes" xml:"processes" yaml:"processes"`
-	//MeasurementToolID    string    `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
-	//ProductionObjectName string    `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
+	// Version              string    `json:"version" yaml:"version" xml:"version"`
+	// Remarks              string    `json:"remarks" yaml:"remarks" xml:"remarks"`
+	// Params               string    `json:"params" yaml:"params" xml:"params"`
+	// Processes            string    `json:"processes" xml:"processes" yaml:"processes"`
+	// MeasurementToolID    string    `json:"measurement_tool_id" yaml:"measurement_tool_id" xml:"measurement_tool_id"`
+	// ProductionObjectName string    `json:"production_object_name" yaml:"production_object_name" xml:"production_object_name"`
 }
 
 type ApiHTTPGetSubTask struct {
@@ -416,7 +416,7 @@ type ApiHTTPGetTask struct {
 
 	Operators []*ApiHTTPGetAccountGet       `json:"operators" yaml:"operators" xml:"operators"`
 	Sub       map[string]*ApiHTTPGetSubTask `json:"sub" yaml:"sub" xml:"sub"`
-	//Group     map[string]*ApiHTTPGetTechnologyItem            `json:"group" yaml:"group" xml:"group"`
+	// Group     map[string]*ApiHTTPGetTechnologyItem            `json:"group" yaml:"group" xml:"group"`
 	NextByType string `json:"next_by_type" yaml:"next_by_type" xml:"next_by_type"`
 }
 
@@ -439,6 +439,7 @@ type ApiHTTPGetItem struct {
 	ColumnCode     string `json:"column_code" yaml:"column_code" xml:"column_code"`
 	RelationItemID string `json:"relation_item_id" yaml:"relation_item_id" xml:"relation_item_id"`
 	NextByType     string `json:"next_by_type" yaml:"next_by_type" xml:"next_by_type"`
+	Moved          bool   `json:"moved" yaml:"moved" xml:"moved"`
 
 	Points []*ApiHTTPGetPoint `json:"points,omitempty" yaml:"points,omitempty" xml:"points,omitempty"`
 }
